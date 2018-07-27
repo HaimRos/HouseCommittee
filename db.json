@@ -1,19 +1,21 @@
 {
     "community": [{
             "id": 1,
-            "city": "Tel-Aviv",
-            "address": "Ir Shemesh 60"
+            "name":"My Home",
+            "address": "Ir Shemesh 60",
+            "city": "Tel-Aviv"
         },
         {
             "id": 2,
-            "city": "Ashdod",
+            "name":"My Home",
             "street": "Hertzel 8",
-            "contactId": 2
+            "city": "Ashdod"
         },
         {
             "id": 3,
-            "city": "Haifa",
-            "address": "Shoham 12"
+            "name":"My Home",            
+            "address": "Shoham 12",
+            "city": "Haifa"
         }
     ],
 
