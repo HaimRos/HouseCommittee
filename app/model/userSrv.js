@@ -3,6 +3,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     $rootScope.serverPath = "https://json-server-heroku-pxkilxfxjr.now.sh";
 
     var activeUser = null;
+    var messageArr = [];
 
     function User(plainUser) {
         this.id = plainUser.id;
@@ -13,6 +14,17 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.apartment = plainUser.apartment;
         this.isCommitteeMember = plainUser.isCommitteeMember;
     }
+
+    function Mesasge(plainMessage) {
+        this.id = plainMessage.id;
+        this.memberId = plainMessage.memberId;
+        this.creationTime = plainMessage.creationTime;
+        this.title = plainMessage.title;
+        this.details = plainMessage.details;
+        this.priority = plainMessage.priority;
+        this.comments = plainMessage.comments;
+    }
+
 
     function isLoggedIn() {
         return activeUser ? true : false;
