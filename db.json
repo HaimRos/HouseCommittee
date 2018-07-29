@@ -26,7 +26,8 @@
             "lname": "Rosenberg",
             "email": "haim@rosenberg.com",
             "apartment": 4,
-            "isCommitteeMember": true
+            "isCommitteeMember": true,
+            "password":"1234"
         },
         {
             "id": 2,
@@ -35,7 +36,8 @@
             "lname": "Dvir",
             "email": "uri@dvir.com",
             "apartment": 2,
-            "isCommitteeMember": false
+            "isCommitteeMember": false,
+            "password":"1234"
         },
         {
             "id": 3,
@@ -44,7 +46,8 @@
             "lname": "Biran",
             "email": "yael@biran.com",
             "apartment": 2,
-            "isCommitteeMember": true
+            "isCommitteeMember": true,
+            "password":"1234"
         },
         {
             "id": 4,
@@ -53,7 +56,8 @@
             "lname": "Cohen",
             "email": "alex@cohen.com",
             "apartment": 5,
-            "isCommitteeMember": false
+            "isCommitteeMember": false,
+            "password":"1234"
         },
         {
             "id": 5,
@@ -62,7 +66,8 @@
             "lname": "Bar On",
             "email": "nimrod@baron.com",
             "apartment": 4,
-            "isCommitteeMember": true
+            "isCommitteeMember": true,
+            "password":"1234"
         },
         {
             "id": 6,
@@ -71,7 +76,8 @@
             "lname": "Shindler",
             "email": "merav@shindler.com",
             "apartment": 2,
-            "isCommitteeMember": false
+            "isCommitteeMember": false,
+            "password":"1234"
         },
         {
             "id": 7,
@@ -80,7 +86,8 @@
             "lname": "Arbel",
             "email": "michal@arbel.com",
             "apartment": 2,
-            "isCommitteeMember": true
+            "isCommitteeMember": true,
+            "password":"1234"
         },
         {
             "id": 8,
