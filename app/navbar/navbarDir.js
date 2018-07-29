@@ -1,5 +1,4 @@
-
-app.directive('appNavbar', function(){
+app.directive('appNavbar', function () {
     return {
         templateUrl: "app/navbar/navbar.html",
         controller: "navbarCtrl"

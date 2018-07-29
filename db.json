@@ -1,19 +1,19 @@
 {
-    "community": [{
+    "communities": [{
             "id": 1,
-            "name":"My Home",
+            "name": "My Home",
             "address": "Ir Shemesh 60",
             "city": "Tel-Aviv"
         },
         {
             "id": 2,
-            "name":"My Home",
+            "name": "My Home",
             "street": "Hertzel 8",
             "city": "Ashdod"
         },
         {
             "id": 3,
-            "name":"My Home",            
+            "name": "My Home",
             "address": "Shoham 12",
             "city": "Haifa"
         }
@@ -27,7 +27,7 @@
             "email": "haim@rosenberg.com",
             "apartment": 4,
             "isCommitteeMember": true,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 2,
@@ -37,7 +37,7 @@
             "email": "uri@dvir.com",
             "apartment": 2,
             "isCommitteeMember": false,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 3,
@@ -47,7 +47,7 @@
             "email": "yael@biran.com",
             "apartment": 2,
             "isCommitteeMember": true,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 4,
@@ -57,7 +57,7 @@
             "email": "alex@cohen.com",
             "apartment": 5,
             "isCommitteeMember": false,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 5,
@@ -67,7 +67,7 @@
             "email": "nimrod@baron.com",
             "apartment": 4,
             "isCommitteeMember": true,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 6,
@@ -77,7 +77,7 @@
             "email": "merav@shindler.com",
             "apartment": 2,
             "isCommitteeMember": false,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 7,
@@ -87,7 +87,7 @@
             "email": "michal@arbel.com",
             "apartment": 2,
             "isCommitteeMember": true,
-            "password":"1234"
+            "password": "1234"
         },
         {
             "id": 8,
@@ -100,248 +100,249 @@
         }
     ],
 
-    "message": [{
+    "messages": [{
             "id": 1,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "1st message",
             "details": "Message details...yada yada yada...",
             "priority": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 2,
-            "creatorId": 2,
+            "memberId": 2,
             "creationTime": "",
             "title": "2nd message",
             "details": "Message details...yada yada yada...",
             "priority": 2,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 3,
-            "creatorId": 5,
+            "memberId": 5,
             "creationTime": "",
             "title": "3rd message",
             "details": "Message details...yada yada yada...",
             "priority": 2,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 4,
-            "creatorId": 4,
+            "memberId": 4,
             "creationTime": "",
             "title": "4th message",
             "details": "Message details...yada yada yada...",
             "priority": 3,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 5,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "5th message",
             "details": "Message details...yada yada yada...",
             "priority": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         }
     ],
 
-    "issue": [{
+    "issues": [{
             "id": 1,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "1st issue",
             "details": "Issue details...its all about the plumbing",
             "priority": 1,
             "status": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 2,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "2nd issue",
             "details": "Issue details...its all about the plumbing",
             "priority": 1,
             "status": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 3,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "3rd issue",
             "details": "Issue details...its all about the plumbing",
             "priority": 1,
             "status": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 4,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "4th issue",
             "details": "Issue details...its all about the plumbing",
             "priority": 1,
             "status": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 5,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "5th issue",
             "details": "Issue details...its all about the plumbing",
             "priority": 1,
             "status": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         },
         {
             "id": 6,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
             "title": "6th issue",
             "details": "Issue details...its all about the plumbing",
             "priority": 1,
             "status": 1,
-            "comments": []
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }]
         }
     ],
 
-    "comment": [{
+    "votings": [{
             "id": 1,
-            "parentType": "message",
-            "parentId": 2,
-            "creatorId": 3,
+            "memberId": 3,
             "creationTime": "",
-            "details": "Comment for message",
-            "comments": []
+            "title": "Let's vote about that",
+            "details": "please select one of the following option: Against, In favor, Abstained... ",
+            "options": ["Against", "In favor", "Abstained"],
+            "priority": 1,
+            "dueDate": "",
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }],
+            "votes": [{
+                "memberId": 1,
+                "vote": ""
+            }]
         },
         {
             "id": 2,
-            "parentType": "issue",
-            "parentId": 1,
-            "creatorId": 3,
+            "memberId": 4,
             "creationTime": "",
-            "details": "Comment for issue",
-            "comments": []
+            "title": "Let's vote about that",
+            "details": "please select one of the following option: Against, In favor, Abstained... ",
+            "options": ["Against", "In favor", "Abstained"],
+            "priority": 1,
+            "dueDate": "",
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }],
+            "votes": [{
+                "memberId": 1,
+                "vote": ""
+            }]
         },
         {
             "id": 3,
-            "parentType": "message",
-            "parentId": 5,
-            "creatorId": 5,
+            "memberId": 1,
             "creationTime": "",
-            "details": "Comment for message",
-            "comments": []
+            "title": "Let's vote about that",
+            "details": "please select one of the following option: Against, In favor, Abstained... ",
+            "options": ["Against", "In favor", "Abstained"],
+            "priority": 1,
+            "dueDate": "",
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }],
+            "votes": [{
+                "memberId": 1,
+                "vote": ""
+            }]
         },
         {
             "id": 4,
-            "parentType": "issue",
-            "parentId": 4,
-            "creatorId": 8,
+            "memberId": 3,
             "creationTime": "",
-            "details": "Comment for issue",
-            "comments": []
-        },
-        {
-            "id": 5,
-            "parentType": "comment",
-            "parentId": 3,
-            "creatorId": 8,
-            "creationTime": "",
-            "details": "Comment for comment",
-            "comments": []
+            "title": "Let's vote about that",
+            "details": "please select one of the following option: Against, In favor, Abstained... ",
+            "options": ["Against", "In favor", "Abstained"],
+            "priority": 1,
+            "dueDate": "",
+            "comments": [{
+                "memberId": 1,
+                "creationTime": "",
+                "details": "Comment",
+                "comments": []
+            }],
+            "votes": [{
+                "memberId": 1,
+                "vote": ""
+            }]
         }
-    ],
-
-
-    "voting": [{
-            "id": 1,
-            "creatorId": 3,
-            "creationTime": "",
-            "title": "Let's vote about that",
-            "details": "please select one of the following option: Against, In favor, Abstained... ",
-            "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
-            "dueDate": "",
-            "votes": []
-        },
-        {
-            "id": 2,
-            "creatorId": 4,
-            "creationTime": "",
-            "title": "Let's vote about that",
-            "details": "please select one of the following option: Against, In favor, Abstained... ",
-            "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
-            "dueDate": "",
-            "votes": []
-        },
-        {
-            "id": 3,
-            "creatorId": 1,
-            "creationTime": "",
-            "title": "Let's vote about that",
-            "details": "please select one of the following option: Against, In favor, Abstained... ",
-            "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
-            "dueDate": "",
-            "votes": []
-        },
-        {
-            "id": 4,
-            "creatorId": 3,
-            "creationTime": "",
-            "title": "Let's vote about that",
-            "details": "please select one of the following option: Against, In favor, Abstained... ",
-            "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
-            "dueDate": "",
-            "votes": []
-        }
-    ],
-
-    "vote": [{
-        "voterId": 1,
-        "vote": ""
-    },
-    {
-        "voterId": 2,
-        "vote": ""
-    },
-    {
-        "voterId": 4,
-        "vote": ""
-    },
-    {
-        "voterId": 5,
-        "vote": ""
-    },
-    {
-        "voterId": 8,
-        "vote": ""
-    },
-    {
-        "voterId": 6,
-        "vote": ""
-    },
-    {
-        "voterId": 3,
-        "vote": ""
-    },
-    {
-        "voterId": 4,
-        "vote": ""
-    },
-    {
-        "voterId": 4,
-        "vote": ""
-    },
-    {
-        "voterId": 4,
-        "vote": ""
-    }
-]
+    ]
 }
