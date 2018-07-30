@@ -6,7 +6,7 @@
             <p class="lead">Place where each community member can see his own data</p>
         </div>
     </div>
-    <div id="accordion" ng-controller="dashboardCtrl">
+    <div id="accordion">
         <div class="card" ng-repeat="message in messageArr">
             <div class="card-header" id="heading">
                 <h5 class="mb-0">
@@ -16,9 +16,10 @@
                 </h5>
             </div>
 
-            <div id="collapse{{$index}}" class="collapse show" aria-labelledby="heading" data-parent="#accordion">
+            <div id="collapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#accordion">
                 <div class="card-body">
-                    {{message.details}}
+                    <div>{{message.details}}</div>
+                    <div>{{message.communityId}}</div>
                 </div>
             </div>
         </div>

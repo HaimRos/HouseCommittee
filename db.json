@@ -103,6 +103,7 @@
     "messages": [{
             "id": 1,
             "memberId": 1,
+            "communityID":1,
             "creationTime": "",
             "title": "1st message",
             "details": "Message details...yada yada yada...",
@@ -117,6 +118,7 @@
         {
             "id": 2,
             "memberId": 1,
+            "communityID":1,
             "creationTime": "",
             "title": "2nd message",
             "details": "Message details...yada yada yada...",
@@ -131,6 +133,7 @@
         {
             "id": 3,
             "memberId": 3,
+            "communityID":2,
             "creationTime": "",
             "title": "3rd message",
             "details": "Message details...yada yada yada...",
@@ -145,6 +148,7 @@
         {
             "id": 4,
             "memberId": 3,
+            "communityID":2,
             "creationTime": "",
             "title": "4th message",
             "details": "Message details...yada yada yada...",
@@ -159,6 +163,7 @@
         {
             "id": 5,
             "memberId": 3,
+            "communityID":2,
             "creationTime": "",
             "title": "5th message",
             "details": "Message details...yada yada yada...",
@@ -175,6 +180,7 @@
     "issues": [{
             "id": 1,
             "memberId": 5,
+            "communityID":3,
             "creationTime": "",
             "title": "1st issue",
             "details": "Issue details...its all about the plumbing",
@@ -190,6 +196,7 @@
         {
             "id": 2,
             "memberId": 5,
+            "communityID":3,
             "creationTime": "",
             "title": "2nd issue",
             "details": "Issue details...its all about the plumbing",
@@ -205,6 +212,7 @@
         {
             "id": 3,
             "memberId": 5,
+            "communityID":3,
             "creationTime": "",
             "title": "3rd issue",
             "details": "Issue details...its all about the plumbing",
@@ -220,6 +228,7 @@
         {
             "id": 4,
             "memberId": 1,
+            "communityID":1,
             "creationTime": "",
             "title": "4th issue",
             "details": "Issue details...its all about the plumbing",
@@ -235,6 +244,7 @@
         {
             "id": 5,
             "memberId": 3,
+            "communityID":2,
             "creationTime": "",
             "title": "5th issue",
             "details": "Issue details...its all about the plumbing",
@@ -250,6 +260,7 @@
         {
             "id": 6,
             "memberId": 1,
+            "communityID":1,
             "creationTime": "",
             "title": "6th issue",
             "details": "Issue details...its all about the plumbing",
@@ -267,6 +278,7 @@
     "votings": [{
             "id": 1,
             "memberId": 3,
+            "communityID":2,
             "creationTime": "",
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
@@ -287,6 +299,7 @@
         {
             "id": 2,
             "memberId": 1,
+            "communityID":1,
             "creationTime": "",
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
@@ -307,6 +320,7 @@
         {
             "id": 3,
             "memberId": 1,
+            "communityID":1,
             "creationTime": "",
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
@@ -327,6 +341,7 @@
         {
             "id": 4,
             "memberId": 5,
+            "communityID":3,
             "creationTime": "",
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
@@ -346,3 +361,6 @@
         }
     ]
 }
+
+
+
