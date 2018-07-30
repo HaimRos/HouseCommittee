@@ -18,7 +18,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     function Message(plainMessage) {
         this.id = plainMessage.id;
         this.memberId = plainMessage.memberId;
-        this.communityId = plainMessage.communityId;
+        this.communityId = plainMessage.communityID;
         this.creationTime = plainMessage.creationTime;
         this.title = plainMessage.title;
         this.details = plainMessage.details;
