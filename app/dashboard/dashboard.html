@@ -1,4 +1,4 @@
-<div >
+<div>
     <app-navbar> </app-navbar>
     <div class="jumbotron">
         <div class="container">
@@ -6,20 +6,48 @@
             <p class="lead">Place where each community member can see his own data</p>
         </div>
     </div>
-    <div id="accordion">
-        <div class="card" ng-repeat="message in messageArr">
-            <div class="card-header" id="heading">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
-                        {{message.title}}
-                    </button>
-                </h5>
-            </div>
 
-            <div id="collapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#accordion">
-                <div class="card-body">
-                    <div>{{message.details}}</div>
-                    <div>{{message.communityId}}</div>
+    <div class="row">
+        <div class="col">
+            <h1>Messages</h1>
+            <div id="messageAccordion">
+                <div class="card" ng-repeat="message in messageArr">
+                    <div class="card-header" id="heading">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#messageCollapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
+                                {{message.title}}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="messageCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#messageAccordion">
+                        <div class="card-body">
+                            <div>{{message.details}}</div>
+                            <div>{{message.communityId}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h1>Issues</h1>
+            <div id="issueaAccordion">
+                <div class="card" ng-repeat="issue in issueArr">
+                    <div class="card-header" id="heading">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#issueCollapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
+                                {{issue.title}}
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="issueCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#issueaAccordion">
+                        <div class="card-body">
+                            <div>{{issue.details}}</div>
+                            <div>{{issue.communityId}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

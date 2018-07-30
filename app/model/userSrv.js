@@ -4,6 +4,7 @@ app.factory('user', function ($http, $q, $rootScope) {
 
     var activeUser = null;
     var messageArr = [];
+    var issueArr = [];
 
     function User(plainUser) {
         this.id = plainUser.id;
@@ -26,6 +27,17 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.comments = plainMessage.comments;
     }
 
+    function Issue(plainIssue) {
+        this.id = plainIssue.id;
+        this.memberId = plainIssue.memberId;
+        this.communityId = plainIssue.communityID;
+        this.creationTime = plainIssue.creationTime;
+        this.title = plainIssue.title;
+        this.details = plainIssue.details;
+        this.priority = plainIssue.priority;
+        this.status = plainIssue.status;
+        this.comments = plainIssue.comments;
+    }
 
     function isLoggedIn() {
         return activeUser ? true : false;
@@ -80,12 +92,37 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
+    function getMemberIssueArr() {
+        messageArr = [];
+        var async = $q.defer();
+
+        var loginURL = $rootScope.serverPath + "/issues?communityID=" + activeUser.communityId.toString();
+        $http.get(loginURL).then(function (response) {
+                
+            if (response.data.length > 0) {
+                for (var i=0; i<response.data.length; i++){
+                var msg= new Issue(response.data[i]);
+                issueArr.push(msg);
+            }
+                async.resolve(issueArr);
+            } else {
+                async.reject("invalid credentials");
+            }
+        }, function (err) {
+            async.reject(err);
+        });
+
+        return async.promise;
+    }
+
+
     return {
         login: login,
         isLoggedIn: isLoggedIn,
         logout: logout,
         getActiveUser: getActiveUser,
-        getMemberMessageArr: getMemberMessageArr
+        getMemberMessageArr: getMemberMessageArr,
+        getMemberIssueArr:getMemberIssueArr
     }
 
 
