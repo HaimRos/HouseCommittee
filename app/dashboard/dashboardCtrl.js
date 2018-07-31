@@ -13,4 +13,10 @@ app.controller("dashboardCtrl", function ($scope, user) {
     }, function (error) {
             $log.error(error);
      });
+
+     user.getMemberVotingsArr().then(function (result){        
+        $scope.votingsArr=result;
+    }, function (error) {
+            $log.error(error);
+     });
 })
