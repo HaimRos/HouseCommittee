@@ -21,6 +21,8 @@ app.config(function($routeProvider) {
         templateUrl: "app/issues/issues.html",
         controller: "dashboardCtrl"
     })
-    // .when("/signup", {       
-    // })
+    .when("/votings", {
+        templateUrl: "app/votings/votings.html",
+        controller: "dashboardCtrl"
+    })
 });

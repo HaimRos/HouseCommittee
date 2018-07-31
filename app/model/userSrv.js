@@ -40,7 +40,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.comments = plainIssue.comments;
     }
 
-    function voting(plainVote) {
+    function Voting(plainVote) {
         this.id = plainVote.id;
         this.memberId = plainVote.memberId;
         this.communityId = plainVote.communityID;
@@ -50,30 +50,9 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.optoins = plainVote.optoins;
         this.priority = plainVote.priority;
         this.dueDate = plainVote.dueDate;
-        this.status = plainVote.status;
         this.comments = plainVote.comments;
         this.votes = plainVote.votes;
     }
-
-    "id": 1,
-    "memberId": 3,
-    "communityID":2,
-    "creationTime": "",
-    "title": "Let's vote about that",
-    "details": "please select one of the following option: Against, In favor, Abstained... ",
-    "options": ["Against", "In favor", "Abstained"],
-    "priority": 1,
-    "dueDate": "",
-    "comments": [{
-        "memberId": 1,
-        "creationTime": "",
-        "details": "Comment",
-        "comments": []
-    }],
-    "votes": [{
-        "memberId": 1,
-        "vote": ""
-    }]
 
     
     function isLoggedIn() {
