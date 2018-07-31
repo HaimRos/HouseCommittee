@@ -93,7 +93,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     }
 
     function getMemberIssueArr() {
-        messageArr = [];
+        issueArr = [];
         var async = $q.defer();
 
         var loginURL = $rootScope.serverPath + "/issues?communityID=" + activeUser.communityId.toString();

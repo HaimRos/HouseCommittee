@@ -13,6 +13,14 @@ app.config(function($routeProvider) {
         templateUrl: "app/dashboard/dashboard.html",
         controller: "dashboardCtrl"
     })
+    .when("/messages", {
+        templateUrl: "app/messages/messages.html",
+        controller: "dashboardCtrl"
+    })
+    .when("/issues", {
+        templateUrl: "app/issues/issues.html",
+        controller: "dashboardCtrl"
+    })
     // .when("/signup", {       
     // })
 });
