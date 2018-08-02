@@ -15,14 +15,14 @@ app.config(function($routeProvider) {
     })
     .when("/messages", {
         templateUrl: "app/messages/messages.html",
-        controller: "dashboardCtrl"
+        // controller: "dashboardCtrl"
     })
     .when("/issues", {
         templateUrl: "app/issues/issues.html",
-        controller: "dashboardCtrl"
+        //controller: "dashboardCtrl"
     })
     .when("/votings", {
         templateUrl: "app/votings/votings.html",
-        controller: "dashboardCtrl"
+        //controller: "dashboardCtrl"
     })
 });
