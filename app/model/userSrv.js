@@ -131,7 +131,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
-    function getMemberVotingsArr() {
+    function getMemberVotingArr() {
         votingsArr = [];
         var async = $q.defer();
 
@@ -162,7 +162,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         getActiveUser: getActiveUser,
         getMemberMessageArr: getMemberMessageArr,
         getMemberIssueArr:getMemberIssueArr,
-        getMemberVotingsArr:getMemberVotingsArr
+        getMemberVotingArr:getMemberVotingArr
     }
 
 
