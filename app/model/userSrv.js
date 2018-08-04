@@ -5,7 +5,8 @@ app.factory('user', function ($http, $q, $rootScope) {
     var activeUser = null;
     var messageArr = [];
     var issueArr = [];
-    var votingsArr =[];
+    var votingsArr = [];
+    var tenantsArr = [];
 
     function User(plainUser) {
         this.id = plainUser.id;
@@ -54,7 +55,16 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.votes = plainVote.votes;
     }
 
-    
+    function Tenant(plainTenant) {
+        this.id = plainTenant.id;
+        this.communityId = plainTenant.communityId;
+        this.fname = plainTenant.fname;
+        this.lname = plainTenant.lname;
+        this.email = plainTenant.email;
+        this.apartment = plainTenant.apartment;
+        this.isCommitteeMember = plainTenant.isCommitteeMember;
+    }
+
     function isLoggedIn() {
         return activeUser ? true : false;
     }
@@ -91,12 +101,12 @@ app.factory('user', function ($http, $q, $rootScope) {
 
         var loginURL = $rootScope.serverPath + "/messages?communityID=" + activeUser.communityId.toString();
         $http.get(loginURL).then(function (response) {
-                
+
             if (response.data.length > 0) {
-                for (var i=0; i<response.data.length; i++){
-                var msg= new Message(response.data[i]);
-                messageArr.push(msg);
-            }
+                for (var i = 0; i < response.data.length; i++) {
+                    var msg = new Message(response.data[i]);
+                    messageArr.push(msg);
+                }
                 async.resolve(messageArr);
             } else {
                 async.reject("invalid credentials");
@@ -114,12 +124,12 @@ app.factory('user', function ($http, $q, $rootScope) {
 
         var loginURL = $rootScope.serverPath + "/issues?communityID=" + activeUser.communityId.toString();
         $http.get(loginURL).then(function (response) {
-                
+
             if (response.data.length > 0) {
-                for (var i=0; i<response.data.length; i++){
-                var msg= new Issue(response.data[i]);
-                issueArr.push(msg);
-            }
+                for (var i = 0; i < response.data.length; i++) {
+                    var msg = new Issue(response.data[i]);
+                    issueArr.push(msg);
+                }
                 async.resolve(issueArr);
             } else {
                 async.reject("invalid credentials");
@@ -137,12 +147,12 @@ app.factory('user', function ($http, $q, $rootScope) {
 
         var loginURL = $rootScope.serverPath + "/votings?communityID=" + activeUser.communityId.toString();
         $http.get(loginURL).then(function (response) {
-                
+
             if (response.data.length > 0) {
-                for (var i=0; i<response.data.length; i++){
-                var vote= new Voting(response.data[i]);
-                votingsArr.push(vote);
-            }
+                for (var i = 0; i < response.data.length; i++) {
+                    var vote = new Voting(response.data[i]);
+                    votingsArr.push(vote);
+                }
                 async.resolve(votingsArr);
             } else {
                 async.reject("invalid credentials");
@@ -154,6 +164,28 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
+    function getTenantsArr() {
+        tenantsArr = [];
+        var async = $q.defer();
+
+        var loginURL = $rootScope.serverPath + "/members?communityId=" + activeUser.communityId.toString();
+        $http.get(loginURL).then(function (response) {
+
+            if (response.data.length > 0) {
+                for (var i = 0; i < response.data.length; i++) {
+                    var tenant = new Tenant(response.data[i]);
+                    tenantsArr.push(tenant);
+                }
+                async.resolve(tenantsArr);
+            } else {
+                async.reject("invalid credentials");
+            }
+        }, function (err) {
+            async.reject(err);
+        });
+
+        return async.promise;
+    }
 
     return {
         login: login,
@@ -161,8 +193,9 @@ app.factory('user', function ($http, $q, $rootScope) {
         logout: logout,
         getActiveUser: getActiveUser,
         getMemberMessageArr: getMemberMessageArr,
-        getMemberIssueArr:getMemberIssueArr,
-        getMemberVotingArr:getMemberVotingArr
+        getMemberIssueArr: getMemberIssueArr,
+        getMemberVotingArr: getMemberVotingArr,
+        getTenantsArr: getTenantsArr,
     }
 
 

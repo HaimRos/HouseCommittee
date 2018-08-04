@@ -1,0 +1,26 @@
+<div >
+        <app-navbar> </app-navbar>
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Tenants</h1>
+                <p class="lead">Place where each community member can manage his tenants</p>
+                <button type="button" class="btn btn-lg btn-success" ng-click="addMessage()">Add Tenant</button>
+            </div>
+        </div>
+    </div>
+
+<div class="container" >
+    
+        <div class="row">
+            <div class="margin-auto col-sm-6 col-lg-3" ng-repeat="tenant in tenantsArr">
+                <div class="card mt-3" ng-click="showPic(pic)" ng-class="{'myActive':isActive===pic}">
+                    <img class="card-img-top" ng-src="{{actor.imgUrl}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{tenant.fname+" "+tenant.lname}}</h5>
+                        <p class="card-title">Apartment {{tenant.apartment}}</p>
+                        <p class="card-title">email: {{tenant.email}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -25,4 +25,8 @@ app.config(function($routeProvider) {
         templateUrl: "app/votings/votings.html",
         //controller: "dashboardCtrl"
     })
+    .when("/tenants", {
+        templateUrl: "app/tenants/tenants.html",
+        controller: "tenantsCtrl"
+    })
 });
