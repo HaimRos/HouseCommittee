@@ -69,6 +69,10 @@ app.factory('user', function ($http, $q, $rootScope) {
         return activeUser ? true : false;
     }
 
+    function isAdmin() {
+        return activeUser.isCommitteeMember ? true : false;
+    }
+
     function logout() {
         activeUser = null;
     }
@@ -190,6 +194,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     return {
         login: login,
         isLoggedIn: isLoggedIn,
+        isAdmin:isAdmin,
         logout: logout,
         getActiveUser: getActiveUser,
         getMemberMessageArr: getMemberMessageArr,

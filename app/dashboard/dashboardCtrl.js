@@ -1,6 +1,7 @@
 app.controller("dashboardCtrl", function ($scope, user, $rootScope) {
 
     $rootScope.activeUser = user.getActiveUser();
+    $rootScope.isAdmin = user.isAdmin();
 
     // user.getMemberMessageArr().then(function (result){        
     //     $scope.messageArr=result;
