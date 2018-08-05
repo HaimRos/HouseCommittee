@@ -5,7 +5,7 @@
             <h1 class="display-3">Votings</h1>
             <p class="lead">Place where each community member can see his own Votings</p>
             <!-- Open Modal -->
-            <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#ModalCenter">Add Message</button>
+            <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" data-toggle="modal" data-target="#ModalCenter">Add Message</button>
 
         </div>
     </div>

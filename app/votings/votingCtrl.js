@@ -1,5 +1,8 @@
 app.controller("votingCtrl", function ($scope, user) {
 
+    $scope.isUserAdmin = function () {
+        return user.isAdmin();
+    }
     // user.getMemberVotingArr().then(function (result){        
     //     $scope.votingArr=result;
     // }, function (error) {
