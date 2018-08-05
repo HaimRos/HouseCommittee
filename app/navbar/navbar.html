@@ -14,7 +14,7 @@
             <li class="nav-item" ng-show="isUserLoggedIn()">
                 <a class="nav-link" href="#!/dashboard">Deshboard</a>
             </li>
-            <li class="nav-item" ng-show="isUserLoggedIn()">
+            <li class="nav-item" ng-show="(isUserLoggedIn()&&isUserAdmin())">
                 <a class="nav-link" href="#!/tenants">Tenants</a>
             </li>
             <li class="nav-item" ng-show="isUserLoggedIn()">
