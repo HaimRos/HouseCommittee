@@ -14,8 +14,8 @@ app.config(function($routeProvider) {
         controller: "dashboardCtrl"
     })
     .when("/messages", {
-        templateUrl: "app/messages/messages.html"
-        // controller: "messageCtrl"
+        templateUrl: "app/messages/messages.html",
+        controller: "messageCtrl"
     })
     .when("/issues", {
         templateUrl: "app/issues/issues.html"
