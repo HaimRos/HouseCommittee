@@ -95,6 +95,25 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
+    function signUp(email, password) {
+        // var async = $q.defer();
+
+        // var loginURL = $rootScope.serverPath + "/members?email=" + email + "&password=" + password;
+        // $http.get(loginURL).then(function (response) {
+        //     if (response.data.length > 0) {
+        //         activeUser = new User(response.data[0]);
+        //         async.resolve(activeUser);
+        //     } else {
+        //         async.reject("invalid credentials");
+        //     }
+        // }, function (err) {
+        //     async.reject(err);
+        // });
+
+        // return async.promise;
+    }
+    
+
     function getActiveUser() {
         return activeUser;
     }
@@ -193,6 +212,7 @@ app.factory('user', function ($http, $q, $rootScope) {
 
     return {
         login: login,
+        signUp: signUp,
         isLoggedIn: isLoggedIn,
         isAdmin:isAdmin,
         logout: logout,
