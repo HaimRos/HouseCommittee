@@ -29,4 +29,8 @@ app.config(function($routeProvider) {
         templateUrl: "app/tenants/tenants.html",
         controller: "tenantsCtrl"
     })
+    .when("/signUp", {
+        templateUrl: "app/signUp/signUp.html",
+        controller: "signUpCtrl"
+    })
 });
