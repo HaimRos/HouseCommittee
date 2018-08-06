@@ -5,4 +5,9 @@ app.controller("tenantsCtrl", function ($scope, user) {
     }, function (error) {
             $log.error(error);
      });
+
+
+     function addTenant(){
+         
+     }
 })
