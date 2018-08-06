@@ -1,4 +1,4 @@
-app.controller("votingDirCtrl", function ($scope, user) {
+app.controller("votingDirCtrl", function ($scope, user, $log) {
 
     user.getMemberVotingArr().then(function (result){        
         $scope.votingArr=result;

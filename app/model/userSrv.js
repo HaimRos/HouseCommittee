@@ -8,6 +8,13 @@ app.factory('user', function ($http, $q, $rootScope) {
     var votingsArr = [];
     var tenantsArr = [];
 
+    function Community(plainCommunity){
+        this.id = plainCommunity.id;
+        this.name = plainCommunity.name;
+        this.address = plainCommunity.address;
+        this.city = plainCommunity.city;
+    }
+
     function User(plainUser) {
         this.id = plainUser.id;
         this.communityId = plainUser.communityId;
@@ -95,24 +102,32 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
-    function signUp(email, password) {
-        // var async = $q.defer();
-
-        // var loginURL = $rootScope.serverPath + "/members?email=" + email + "&password=" + password;
-        // $http.get(loginURL).then(function (response) {
-        //     if (response.data.length > 0) {
-        //         activeUser = new User(response.data[0]);
-        //         async.resolve(activeUser);
-        //     } else {
-        //         async.reject("invalid credentials");
-        //     }
-        // }, function (err) {
-        //     async.reject(err);
-        // });
-
-        // return async.promise;
-    }
     
+     function signUp(community,user) {
+         var async = $q.defer();
+         var userSignUpURL = $rootScope.serverPath + "/members";
+         var communitySignUpURL= $rootScope.serverPath + "/communities";
+
+         $http.post(communitySignUpURL, community).then(function(response) {
+            var newCommunity = new Community(response.data);
+            
+            user.communityId=newCommunity.id;
+            $http.post(userSignUpURL, user).then(function(response) {
+                 activeUser = new User(response.data);
+                 async.resolve(activeUser);
+             }, function(err) {
+                 async.reject(err);
+             });
+        
+         }, function(err) {
+             async.reject(err);
+         });
+         
+
+
+
+         return async.promise;
+     }
 
     function getActiveUser() {
         return activeUser;

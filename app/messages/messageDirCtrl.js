@@ -1,4 +1,4 @@
-app.controller("messageDirCtrl", function ($scope, user) {
+app.controller("messageDirCtrl", function ($scope, user, $log) {
 
     user.getMemberMessageArr().then(function (result){        
         $scope.messageArr=result;

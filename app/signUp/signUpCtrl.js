@@ -1,16 +1,26 @@
 app.controller("signUpCtrl", function ($scope, user, $location) {
 
-    $scope.fname="";
-    $scope.lname="";
-    $scope.email="";
-    $scope.password="";
-    $scope.communityName="";
-    $scope.street="";
-    $scope.city="";
+
+    $scope.newUser = {
+        communityId:0,
+        fname:"",
+        lname:"",
+        email:"",
+        apartment:0,
+        isCommitteeMember:true,
+        password:""
+    }
+
+    $scope.newCommunity = {
+        name:"",
+        address:"",
+        city:"",
+    }
+
 
     $scope.signUp = function () {
         $scope.invalidLogin = false;
-        user.signUp($scope.fname, $scope.lname, $scope.email, $scope.password, $scope.communityName, $scope.street, $scope.city).then(function (activeUser) {
+        user.signUp($scope.newCommunity,$scope.newUser).then(function (activeUser) {
             $location.path("/dashboard");
         }, function () {
             $scope.invalidLogin = true;

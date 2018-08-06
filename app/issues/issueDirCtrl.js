@@ -1,4 +1,4 @@
-app.controller("issueDirCtrl", function ($scope, user) {
+app.controller("issueDirCtrl", function ($scope, user, $log) {
 
 
     user.getMemberIssueArr().then(function (result){        
