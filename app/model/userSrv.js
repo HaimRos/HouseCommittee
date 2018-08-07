@@ -8,7 +8,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     var votingsArr = [];
     var tenantsArr = [];
 
-    function Community(plainCommunity){
+    function Community(plainCommunity) {
         this.id = plainCommunity.id;
         this.name = plainCommunity.name;
         this.address = plainCommunity.address;
@@ -102,32 +102,43 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
-    
-     function signUp(community,user) {
-         var async = $q.defer();
-         var userSignUpURL = $rootScope.serverPath + "/members";
-         var communitySignUpURL= $rootScope.serverPath + "/communities";
 
-         $http.post(communitySignUpURL, community).then(function(response) {
+    function signUp(community, user) {
+        var async = $q.defer();
+        var userSignUpURL = $rootScope.serverPath + "/members";
+        var communitySignUpURL = $rootScope.serverPath + "/communities";
+
+        $http.post(communitySignUpURL, community).then(function (response) {
             var newCommunity = new Community(response.data);
-            
-            user.communityId=newCommunity.id;
-            $http.post(userSignUpURL, user).then(function(response) {
-                 activeUser = new User(response.data);
-                 async.resolve(activeUser);
-             }, function(err) {
-                 async.reject(err);
-             });
-        
-         }, function(err) {
-             async.reject(err);
-         });
-         
 
+            user.communityId = newCommunity.id;
+            $http.post(userSignUpURL, user).then(function (response) {
+                activeUser = new User(response.data);
+                async.resolve(activeUser);
+            }, function (err) {
+                async.reject(err);
+            });
 
+        }, function (err) {
+            async.reject(err);
+        });
+        return async.promise;
+    }
 
-         return async.promise;
-     }
+    function addTenant(user) {
+        var newUser=null;
+        var async = $q.defer();
+        var userSignUpURL = $rootScope.serverPath + "/members";
+        user.communityId = activeUser.communityId;
+        $http.post(userSignUpURL, user).then(function (response) {
+            newUser = new User(response.data);
+            tenantsArr.push(newUser);
+            async.resolve(newUser);
+        }, function (err) {
+            async.reject(err);
+        });
+        return async.promise;
+    }
 
     function getActiveUser() {
         return activeUser;
@@ -225,11 +236,14 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
+
+
     return {
         login: login,
         signUp: signUp,
+        addTenant:addTenant,
         isLoggedIn: isLoggedIn,
-        isAdmin:isAdmin,
+        isAdmin: isAdmin,
         logout: logout,
         getActiveUser: getActiveUser,
         getMemberMessageArr: getMemberMessageArr,

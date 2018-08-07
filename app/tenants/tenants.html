@@ -1,68 +1,71 @@
-<div >
-        <app-navbar> </app-navbar>
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="display-3">Tenants</h1>
-                <p class="lead">Place where each community member can manage his tenants</p>
-                <button type="button" class="btn btn-lg btn-success" ng-click="addTenant()" ng-show="isUserAdmin()" data-toggle="modal" data-target="#ModalCenter">Add Tenant</button>
-            </div>
+<div>
+    <app-navbar> </app-navbar>
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Tenants</h1>
+            <p class="lead">Place where each community member can manage his tenants</p>
+            <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" data-toggle="modal" data-target="#ModalCenter">Add Tenant</button>
         </div>
     </div>
+</div>
 
-<div class="container" >
-    
-        <div class="row">
-            <div class="margin-auto col-sm-6 col-lg-3" ng-repeat="tenant in tenantsArr">
-                <div class="card mt-3" ng-click="showPic(pic)" ng-class="{'myActive':isActive===pic}">
-                    <img class="card-img-top" ng-src="{{actor.imgUrl}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{tenant.fname+" "+tenant.lname}}</h5>
-                        <p class="card-title">Apartment {{tenant.apartment}}</p>
-                        <p class="card-title">email: {{tenant.email}}</p>
-                    </div>
+<div class="container">
+
+    <div class="row">
+        <div class="margin-auto col-sm-6 col-lg-3" ng-repeat="tenant in tenantsArr">
+            <div class="card mt-3" ng-click="showPic(pic)" ng-class="{'myActive':isActive===pic}">
+                <img class="card-img-top" ng-src="{{actor.imgUrl}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{tenant.fname+" "+tenant.lname}}</h5>
+                    <p class="card-title">Apartment {{tenant.apartment}}</p>
+                    <p class="card-title">email: {{tenant.email}}</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 
-
-
-       <!-- Modal -->
-       <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLongTitle">New Tenant</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+<!-- Modal -->
+<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLongTitle">Add a new tenant to your community</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" placeholder="First Name" ng-model="newTenant.fname">
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Voting title</label>
-                                <input type="text" class="form-control" id="inputTitle" placeholder="Messgae Title">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Voting Details</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlSelect1">Voting priority</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Low</option>
-                                    <option>Medium</option>
-                                    <option>High</option>
-                                </select>
-                            </div>
-                        </form>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Last Name" ng-model="newTenant.lname">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary">Save</button>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="E-mail address" ng-model="newTenant.email">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="apartment">Apartment number</label>
+                        <input type="number" class="form-control" id="apartment" placeholder="0"ng-model="newTenant.apartment">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" ng-model="newTenant.password">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" ng-click="addTenant()">Save</button>
             </div>
         </div>
+    </div>
+</div>
