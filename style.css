@@ -4,7 +4,13 @@ html,body{
 }
  .container {
   margin: 30px auto;
-  width: 915px;
+  width: 70%;
+}
+
+#homePic{
+  background-image: url("../../assets/paintedladies.jpg");
+  background-repeat: no-repeat;
+  height: 700px;
 }
 .overlay-link {
   width: 300px;
