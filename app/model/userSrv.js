@@ -1,6 +1,6 @@
 app.factory('user', function ($http, $q, $rootScope) {
 
-    $rootScope.serverPath = "https://json-server-heroku-ueqrgkdrrp.now.sh";
+    $rootScope.serverPath = "https://json-server-heroku-sdrvstbtky.now.sh";
 
     var activeUser = null;
     var messageArr = [];
@@ -28,7 +28,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     function Message(plainMessage) {
         this.id = plainMessage.id;
         this.memberId = plainMessage.memberId;
-        this.communityId = plainMessage.communityID;
+        this.communityId = plainMessage.communityId;
         this.creationTime = plainMessage.creationTime;
         this.title = plainMessage.title;
         this.details = plainMessage.details;
@@ -39,7 +39,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     function Issue(plainIssue) {
         this.id = plainIssue.id;
         this.memberId = plainIssue.memberId;
-        this.communityId = plainIssue.communityID;
+        this.communityId = plainIssue.communityId;
         this.creationTime = plainIssue.creationTime;
         this.title = plainIssue.title;
         this.details = plainIssue.details;
@@ -51,7 +51,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     function Voting(plainVote) {
         this.id = plainVote.id;
         this.memberId = plainVote.memberId;
-        this.communityId = plainVote.communityID;
+        this.communityId = plainVote.communityId;
         this.creationTime = plainVote.creationTime;
         this.title = plainVote.title;
         this.details = plainVote.details;
@@ -140,6 +140,52 @@ app.factory('user', function ($http, $q, $rootScope) {
         return async.promise;
     }
 
+    function addMessage(message) {
+        var newMessage=null;
+        var async = $q.defer();
+        var messagesURL = $rootScope.serverPath + "/messages";
+        message.memberId=activeUser.id;
+        message.communityId=activeUser.communityId;
+        $http.post(messagesURL, message).then(function (response) {
+            newMessage = new Message(response.data);
+            messageArr.push(newMessage);
+            async.resolve(newMessage);
+        }, function (err) {
+            async.reject(err);
+        });
+        return async.promise;
+    }
+    function addIssue(issue) {
+        var newIssue=null;
+        var async = $q.defer();
+        var IssuesURL = $rootScope.serverPath + "/Issues";
+        issue.memberId=activeUser.id;
+        issue.communityId=activeUser.communityId;
+        $http.post(IssuesURL, issue).then(function (response) {
+            newIssue = new Issue(response.data);
+            issueArr.push(newIssue);
+            async.resolve(newIssue);
+        }, function (err) {
+            async.reject(err);
+        });
+        return async.promise;
+    }
+    function addVoting(voting) {
+        var newVoting=null;
+        var async = $q.defer();
+        var votingsURL = $rootScope.serverPath + "/votings";
+        voting.memberId=activeUser.id;
+        voting.communityId=activeUser.communityId;
+        $http.post(votingsURL, voting).then(function (response) {
+            newVoting = new Voting(response.data);
+            votingsArr.push(newVoting);
+            async.resolve(newVoting);
+        }, function (err) {
+            async.reject(err);
+        });
+        return async.promise;
+    }
+
     function getActiveUser() {
         return activeUser;
     }
@@ -148,7 +194,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         messageArr = [];
         var async = $q.defer();
 
-        var loginURL = $rootScope.serverPath + "/messages?communityID=" + activeUser.communityId.toString();
+        var loginURL = $rootScope.serverPath + "/messages?communityId=" + activeUser.communityId.toString();
         $http.get(loginURL).then(function (response) {
 
             if (response.data.length > 0) {
@@ -171,7 +217,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         issueArr = [];
         var async = $q.defer();
 
-        var loginURL = $rootScope.serverPath + "/issues?communityID=" + activeUser.communityId.toString();
+        var loginURL = $rootScope.serverPath + "/issues?communityId=" + activeUser.communityId.toString();
         $http.get(loginURL).then(function (response) {
 
             if (response.data.length > 0) {
@@ -194,7 +240,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         votingsArr = [];
         var async = $q.defer();
 
-        var loginURL = $rootScope.serverPath + "/votings?communityID=" + activeUser.communityId.toString();
+        var loginURL = $rootScope.serverPath + "/votings?communityId=" + activeUser.communityId.toString();
         $http.get(loginURL).then(function (response) {
 
             if (response.data.length > 0) {
@@ -242,6 +288,9 @@ app.factory('user', function ($http, $q, $rootScope) {
         login: login,
         signUp: signUp,
         addTenant:addTenant,
+        addMessage: addMessage,
+        addIssue: addIssue,
+        addVoting:addVoting,
         isLoggedIn: isLoggedIn,
         isAdmin: isAdmin,
         logout: logout,
