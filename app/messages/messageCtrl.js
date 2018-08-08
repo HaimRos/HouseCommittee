@@ -26,6 +26,23 @@ app.controller("messageCtrl", function ($scope, user) {
         }, function () {
             $scope.invalidLogin = true;
         })
+
     }
+
+    $scope.deleteMessage = function (message) {
+        user.deleteMessage(message).then(function () {
+        }, function () {
+            console.log("error");
+        })
+        $scope.$apply();
+    }
+
+    user.getMemberMessageArr().then(function (result){        
+        $scope.messageArr=result;
+    }, function (error) {
+            $log.error(error);
+     });
+
+
 
 })

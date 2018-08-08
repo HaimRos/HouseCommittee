@@ -27,4 +27,11 @@ app.controller("tenantsCtrl", function ($scope, user, $log) {
         })
     }
 
+    $scope.deleteTenant = function (tenant) {
+        user.deleteTenant(tenant).then(function () {
+        }, function () {
+            console.log("error");
+        })
+        $scope.$apply();
+    }
 })

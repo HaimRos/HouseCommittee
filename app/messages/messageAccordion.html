@@ -1,4 +1,4 @@
-<div id="messageAccordion">
+<div id="messageAccordion" class="container">
     <div class="card" ng-repeat="message in messageArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
@@ -11,7 +11,9 @@
         <div id="messageCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#messageAccordion">
             <div class="card-body">
                 <div>{{message.details}}</div>
-                <div>{{message.communityId}}</div>
+                <div>{{message.creationTime}}</div>
+                <button type="button" class="btn btn-lg btn-success" ng-click="deleteMessage(message)">Delete</button>
+                
             </div>
         </div>
     </div>

@@ -22,6 +22,12 @@ app.controller("votingCtrl", function ($scope, user) {
         }]
     }
 
+    user.getMemberVotingArr().then(function (result){        
+        $scope.votingArr=result;
+    }, function (error) {
+            $log.error(error);
+     });
+
     $scope.isUserAdmin = function () {
         return user.isAdmin();
     }
@@ -33,4 +39,13 @@ app.controller("votingCtrl", function ($scope, user) {
             $scope.invalidLogin = true;
         })
     }
+
+    $scope.deleteVoting = function (voting) {
+        user.deleteMessage(voting).then(function () {
+        }, function () {
+            console.log("error");
+        })
+        $scope.$apply();
+    }
+
 })

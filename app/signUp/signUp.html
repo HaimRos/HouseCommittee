@@ -1,48 +1,69 @@
-<div class="container login mt-6">
-    <h1>Sign Up to your home committee account</h1>
+<div class="loginGap">
+    <nav id="nav" class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+            <img src="/assets/home.png" width="35" height="35" alt=""> Domus</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
 
-    <form class="mx-5 p-4">
-        <h3>Personal information</h3>
-        <div class="form-group">
-            <label for="firstName">First name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="First name" ng-model="newUser.fname">
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Last name" ng-model="newUser.lname">
-        </div>
+    <div class="container login mt-6">
+        <h1 class="text-center">Sign Up for Domus</h1>
+        <h5 class="text-center">A home community account</h5>
+        <p class="text-center">Already have an account?
+            <a ng-href="#!/login">Login</a>
+        </p>
 
-        <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" ng-model="newUser.email">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" ng-model="newUser.password">
-        </div>
-        <div class="form-group">
-            <label for="rePwd">Re-enter password:</label>
-            <input type="password" class="form-control" id="rePwd" ng-model="newUser.rePassword">
-        </div>
-        <h3>Your community</h3>
-        <div class="form-group">
-                <label for="communityName">Community name</label>
-                <input type="text" class="form-control" id="communityName" placeholder="Community name" ng-model="newCommunity.name">
-            </div>
-            <div class="form-group">
-                <label for="street">Street</label>
-                <input type="text" class="form-control" id="street" placeholder="Street" ng-model="newCommunity.address">
-            </div>
-            <div class="form-group">
-                    <label for="apartment">Apartment number</label>
-                    <input type="text" class="form-control" id="apartment" placeholder="Your apartment number" ng-model="newUser.apartment">
+        <form class=" row mx-5 p-4">
+            <div class="col-sm-6 mr-auto">
+                <h3>Personal information</h3>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" ng-model="newUser.fname">
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" ng-model="newUser.lname">
+                    </div>
                 </div>
-            <div class="form-group">
+                <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email" ng-model="newUser.email">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" ng-model="newUser.password">
+                </div>
+                <div class="form-group">
+                    <label for="rePwd">Re-enter password:</label>
+                    <input type="password" class="form-control" id="rePwd" ng-model="newUser.rePassword">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3>Add your community</h3>
+                <div class="form-group">
+                    <label for="communityName">Name your community</label>
+                    <input type="text" class="form-control" id="communityName" placeholder="" ng-model="newCommunity.name">
+                </div>
+                <div class="form-group">
+                    <label for="street">Address </label>
+                    <input type="text" class="form-control" id="street" placeholder="" ng-model="newCommunity.address">
+                </div>
+                <div class="form-group">
                     <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" placeholder="City" ng-model="newCommunity.city">
+                    <input type="text" class="form-control" id="city" placeholder="" ng-model="newCommunity.city">
                 </div>
+                <div class="form-group">
+                    <label for="apartment">Your apartment number</label>
+                    <input type="text" class="form-control" id="apartment" placeholder="" ng-model="newUser.apartment">
+                </div>
+            </div>
 
 
-        <button type="button" class="btn btn-block btn-lg btn-success" ng-click="signUp()">Sign Up</button>
-    </form>
+            <button type="button" class="btn btn-block btn-lg btn-success" ng-click="signUp()">Sign Up</button>
+        </form>
+    </div>
 </div>

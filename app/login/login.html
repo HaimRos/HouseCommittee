@@ -1,20 +1,32 @@
-<div class="container login mt-6">
-    <h1>Login to your home committee account</h1>
-    <p>or
-        <a ng-href="#!/signup">create an account</a>
-    </p>
-    <div class="alert alert-danger" role="alert" ng-show="invalidLogin">
-        Invalid Credentials!
+<div class="loginGap">
+    <nav id="nav" class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">
+            <img src="/assets/home.png" width="35" height="35" alt=""> Domus</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <div class="container login mt-6">
+        <h1 class="text-center">Login to Domus</h1>
+        <h5 class="text-center">Your home community account</h5>
+        <p class="text-center">Still don't have an account?
+            <a ng-href="#!/signUp">Sign Up</a>
+        </p>
+        <div class="alert alert-danger" role="alert" ng-show="invalidLogin">
+            Invalid Credentials!
+        </div>
+        <form class="mx-5 p-4">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" ng-model="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" ng-model="password">
+            </div>
+            <button type="button" class="btn btn-block btn-lg btn-success" ng-click="login()">Log In</button>
+        </form>
     </div>
-    <form class="mx-5 p-4">
-        <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email" ng-model="email">
-        </div>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" ng-model="password">
-        </div>
-        <button type="button" class="btn btn-block btn-lg btn-success" ng-click="login()">Log In</button>
-    </form>
 </div>

@@ -1,7 +1,38 @@
 
 html,body{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Bentham', serif;
 }
+
+#nav{
+  position: fixed;
+  top: 0;
+  width:100%;
+
+}
+
+.gap{
+  margin-top:40px;
+}
+
+.loginGap{
+  margin-top:61px;
+  padding-top:20px;
+}
+
+#jumbotron {
+  font-family: 'Fredericka the Great', cursive;
+  text-align: center;
+  padding: 10px;
+  padding-top:30px;
+  margin-bottom:0;
+  margin-top:40px;
+}
+
+#container{
+  margin-top:0;
+  margin-bottom:0;  
+}
+
  .container {
   margin: 30px auto;
   width: 70%;

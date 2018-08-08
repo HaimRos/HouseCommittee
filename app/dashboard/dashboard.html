@@ -1,21 +1,23 @@
 <div>
     <app-navbar> </app-navbar>
-    <div class="jumbotron">
+    <div class="gap jumbotron">
         <div class="container">
             <h1 class="display-3">Hi {{activeUser.fname}}, it's your dashboard</h1>
             <p class="lead">Place where each community member can see his own data</p>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <h1>Messages</h1>
-            <message-accordion></message-accordion>
-        </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Messages</h1>
+                <message-accordion></message-accordion>
+            </div>
 
-        <div class="col">
-            <h1>Issues</h1>
-            <issue-accordion></issue-accordion>
+            <div class="col">
+                <h1>Issues</h1>
+                <issue-accordion></issue-accordion>
+            </div>
         </div>
     </div>
 </div>

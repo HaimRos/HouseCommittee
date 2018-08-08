@@ -1,4 +1,4 @@
-<div id="votingAccordion">
+<div id="votingAccordion" class="container">
     <div class="card" ng-repeat="voting in votingArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
@@ -11,7 +11,8 @@
         <div id="votingCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#voitingAccordion">
             <div class="card-body">
                 <div>{{voting.details}}</div>
-                <div>{{voting.communityId}}</div>
+                <div>{{voting.creationTime}}</div>
+                <button type="button" class="btn btn-lg btn-success" ng-click="deleteMessage(voting)">Delete</button>
             </div>
         </div>
     </div>

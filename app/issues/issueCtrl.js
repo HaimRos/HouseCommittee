@@ -24,7 +24,18 @@ app.controller("issueCtrl", function ($scope, user) {
         })
     }
 
-     
+    user.getMemberIssueArr().then(function (result){        
+        $scope.issueArr=result;
+    }, function (error) {
+            $log.error(error);
+     });
 
 
+     $scope.deleteIssue = function (issue) {
+        user.deleteIssue(issue).then(function () {
+        }, function () {
+            console.log("error");
+        })
+        $scope.$apply();
+    }
 })
