@@ -48,6 +48,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.priority = plainIssue.priority;
         this.status = plainIssue.status;
         this.comments = plainIssue.comments;
+        this.picture = plainIssue.picture;
     }
 
     function Voting(plainVote) {

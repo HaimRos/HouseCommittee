@@ -17,6 +17,7 @@ app.controller("issueCtrl", function ($scope, user) {
     }
 
     $scope.addIssue = function () {
+        $scope.newIssue.picture=$scope.image.dataURL;
         user.addIssue($scope.newIssue).then(function (activeUser) {
             $('#ModalCenter').modal('hide');
         }, function () {
