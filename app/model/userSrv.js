@@ -65,15 +65,15 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.votes = plainVote.votes;
     }
 
-    function Tenant(plainTenant) {
-        this.id = plainTenant.id;
-        this.communityId = plainTenant.communityId;
-        this.fname = plainTenant.fname;
-        this.lname = plainTenant.lname;
-        this.email = plainTenant.email;
-        this.apartment = plainTenant.apartment;
-        this.isCommitteeMember = plainTenant.isCommitteeMember;
-    }
+    // function Tenant(plainTenant) {
+    //     this.id = plainTenant.id;
+    //     this.communityId = plainTenant.communityId;
+    //     this.fname = plainTenant.fname;
+    //     this.lname = plainTenant.lname;
+    //     this.email = plainTenant.email;
+    //     this.apartment = plainTenant.apartment;
+    //     this.isCommitteeMember = plainTenant.isCommitteeMember;
+    // }
 
     function isLoggedIn() {
         return activeUser ? true : false;
@@ -369,7 +369,7 @@ app.factory('user', function ($http, $q, $rootScope) {
 
             if (response.data.length > 0) {
                 for (var i = 0; i < response.data.length; i++) {
-                    var tenant = new Tenant(response.data[i]);
+                    var tenant = new User(response.data[i]);
                     tenantsArr.push(tenant);
                 }
                 async.resolve(tenantsArr);
