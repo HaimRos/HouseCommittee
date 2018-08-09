@@ -107,7 +107,7 @@
             "creationTime": "",
             "title": "1st message",
             "details": "Message details...yada yada yada...",
-            "priority": 1,
+            "priority": "High",
             "comments": [{
                 "memberId": 1,
                 "creationTime": "",
@@ -122,7 +122,7 @@
             "creationTime": "",
             "title": "2nd message",
             "details": "Message details...yada yada yada...",
-            "priority": 2,
+            "priority": "Medium",
             "comments": [{
                 "memberId": 1,
                 "creationTime": "",
@@ -137,7 +137,7 @@
             "creationTime": "",
             "title": "3rd message",
             "details": "Message details...yada yada yada...",
-            "priority": 2,
+            "priority": "High",
             "comments": [{
                 "memberId": 1,
                 "creationTime": "",
@@ -152,7 +152,7 @@
             "creationTime": "",
             "title": "4th message",
             "details": "Message details...yada yada yada...",
-            "priority": 3,
+            "priority": "Low",
             "comments": [{
                 "memberId": 1,
                 "creationTime": "",
@@ -167,7 +167,7 @@
             "creationTime": "",
             "title": "5th message",
             "details": "Message details...yada yada yada...",
-            "priority": 1,
+            "priority": "Medium",
             "comments": [{
                 "memberId": 1,
                 "creationTime": "",
@@ -184,7 +184,7 @@
             "creationTime": "",
             "title": "1st issue",
             "details": "Issue details...its all about the plumbing",
-            "priority": 1,
+            "priority": "Medium",
             "status": 1,
             "comments": [{
                 "memberId": 1,
@@ -200,7 +200,7 @@
             "creationTime": "",
             "title": "2nd issue",
             "details": "Issue details...its all about the plumbing",
-            "priority": 1,
+            "priority": "Low",
             "status": 1,
             "comments": [{
                 "memberId": 1,
@@ -216,7 +216,7 @@
             "creationTime": "",
             "title": "3rd issue",
             "details": "Issue details...its all about the plumbing",
-            "priority": 1,
+            "priority": "High",
             "status": 1,
             "comments": [{
                 "memberId": 1,
@@ -232,7 +232,7 @@
             "creationTime": "",
             "title": "4th issue",
             "details": "Issue details...its all about the plumbing",
-            "priority": 1,
+            "priority": "Medium",
             "status": 1,
             "comments": [{
                 "memberId": 1,
@@ -248,7 +248,7 @@
             "creationTime": "",
             "title": "5th issue",
             "details": "Issue details...its all about the plumbing",
-            "priority": 1,
+            "priority": "Medium",
             "status": 1,
             "comments": [{
                 "memberId": 1,
@@ -264,7 +264,7 @@
             "creationTime": "",
             "title": "6th issue",
             "details": "Issue details...its all about the plumbing",
-            "priority": 1,
+            "priority": "Low",
             "status": 1,
             "comments": [{
                 "memberId": 1,
@@ -283,7 +283,7 @@
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
             "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
+            "priority": "Medium",
             "dueDate": "",
             "comments": [{
                 "memberId": 1,
@@ -304,7 +304,7 @@
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
             "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
+            "priority": "Medium",
             "dueDate": "",
             "comments": [{
                 "memberId": 1,
@@ -325,7 +325,7 @@
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
             "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
+            "priority": "Low",
             "dueDate": "",
             "comments": [{
                 "memberId": 1,
@@ -346,7 +346,7 @@
             "title": "Let's vote about that",
             "details": "please select one of the following option: Against, In favor, Abstained... ",
             "options": ["Against", "In favor", "Abstained"],
-            "priority": 1,
+            "priority": "High",
             "dueDate": "",
             "comments": [{
                 "memberId": 1,

@@ -1,5 +1,5 @@
 <div id="votingAccordion" class="container">
-    <div class="card" ng-repeat="voting in votingArr">
+    <div class="card" ng-repeat="voting in votingsArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
                 <button class="btn btn-link" data-toggle="collapse" data-target="#votingCollapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
@@ -12,7 +12,8 @@
             <div class="card-body">
                 <div>{{voting.details}}</div>
                 <div>{{voting.creationTime}}</div>
-                <button type="button" class="btn btn-lg btn-success" ng-click="deleteMessage(voting)">Delete</button>
+                <div>{{voting.priority}}</div>
+                <button type="button" class="btn btn-lg btn-success" ng-click="deleteVoting(voting)">Delete</button>
             </div>
         </div>
     </div>

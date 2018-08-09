@@ -34,7 +34,6 @@ app.controller("messageCtrl", function ($scope, user) {
         }, function () {
             console.log("error");
         })
-        $scope.$apply();
     }
 
     user.getMemberMessageArr().then(function (result){        

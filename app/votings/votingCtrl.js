@@ -6,33 +6,37 @@ app.controller("votingCtrl", function ($scope, user) {
         creationTime: "",
         title: "",
         details: "",
-        options:["Against", "In favor", "Abstained"],
+        options: ["Against", "In favor", "Abstained"],
         priority: 1,
-        dueDate:"",
-        status:1,
+        dueDate: "",
+        status: 1,
         comments: [{
             memberId: 1,
             creationTime: "",
             details: "Comment",
             comments: []
         }],
-        votes:[{
-            memberId:0,
-            vote:""
+        votes: [{
+            memberId: 0,
+            vote: ""
         }]
     }
 
-    user.getMemberVotingArr().then(function (result){        
-        $scope.votingArr=result;
+    user.getMemberVotingArr().then(function (result) {
+        $scope.votingsArr = result;
     }, function (error) {
-            $log.error(error);
-     });
+        $log.error(error);
+    });
 
     $scope.isUserAdmin = function () {
         return user.isAdmin();
     }
 
     $scope.addVoting = function () {
+        var voteOptions = document.getElementById("inputOptions");
+        
+        $scope.newVoting.options = voteOptions.value.split(",");
+
         user.addVoting($scope.newVoting).then(function (activeUser) {
             $('#ModalCenter').modal('hide');
         }, function () {
@@ -41,11 +45,9 @@ app.controller("votingCtrl", function ($scope, user) {
     }
 
     $scope.deleteVoting = function (voting) {
-        user.deleteMessage(voting).then(function () {
-        }, function () {
+        user.deleteVoting(voting).then(function () {}, function () {
             console.log("error");
         })
-        $scope.$apply();
     }
 
 })

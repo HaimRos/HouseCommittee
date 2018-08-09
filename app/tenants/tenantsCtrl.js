@@ -32,6 +32,5 @@ app.controller("tenantsCtrl", function ($scope, user, $log) {
         }, function () {
             console.log("error");
         })
-        $scope.$apply();
     }
 })

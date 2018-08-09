@@ -36,6 +36,5 @@ app.controller("issueCtrl", function ($scope, user) {
         }, function () {
             console.log("error");
         })
-        $scope.$apply();
     }
 })
