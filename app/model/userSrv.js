@@ -1,6 +1,6 @@
 app.factory('user', function ($http, $q, $rootScope) {
 
-    $rootScope.serverPath = "https://json-server-heroku-sdrvstbtky.now.sh";
+    $rootScope.serverPath = "https://json-server-heroku-ufyladztch.now.sh";
 
     var activeUser = null;
     var messageArr = [];
