@@ -1,4 +1,4 @@
-var app = angular.module("HouseCommitteeApp", ["ngRoute"]);
+var app = angular.module("HouseCommitteeApp", ["ngRoute", "imageupload"]);
 
 app.config(function($routeProvider) {
     $routeProvider

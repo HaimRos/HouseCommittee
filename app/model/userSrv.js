@@ -23,6 +23,8 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.email = plainUser.email;
         this.apartment = plainUser.apartment;
         this.isCommitteeMember = plainUser.isCommitteeMember;
+        this.password = plainUser.password;
+        this.picture = plainUser.picture;
     }
 
     function Message(plainMessage) {

@@ -8,7 +8,8 @@ app.controller("tenantsCtrl", function ($scope, user, $log) {
         email:"",
         apartment:0,
         isCommitteeMember:false,
-        password:""
+        password:"",
+        picture:""
     }
     
     user.getTenantsArr().then(function (result){        
@@ -20,6 +21,7 @@ app.controller("tenantsCtrl", function ($scope, user, $log) {
 
      $scope.addTenant = function () {
         $scope.invalidLogin = false;
+        $scope.newTenant.picture=$scope.image.dataURL;
         user.addTenant($scope.newTenant).then(function (activeUser) {
             $('#ModalCenter').modal('hide');
         }, function () {
