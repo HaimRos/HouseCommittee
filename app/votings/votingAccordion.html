@@ -15,14 +15,15 @@
                     <div>{{voting.creationTime}}</div>
                     <div>{{voting.priority}}</div>
 
-                    <div class="form-group">
-                        <label for="voteOption">Select your vote</label>
-                        <select id="voteOption">
+                    <div class="row form-group">
+                        <label for="voteOption" class="col-sm-2">Select your vote</label>
+                        <select id="voteOption" class=" col-sm-1" ng-model="selection">
                                 <option ng-repeat="option in newVoting.options">{{option}}</option>
                         </select>
+                        <button type="button" class=" col-sm-1 btn btn-sm btn-primary" ng-click="submitVote(voting, selection)">Submit vote</button>
                     </div>
                     <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
-                    <button type="button" class="btn btn-lg btn-success" ng-click="myVote(voting)">Submit vote</button>
+                    
                 </form>
             </div>
         </div>

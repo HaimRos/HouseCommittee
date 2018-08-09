@@ -80,6 +80,10 @@ app.factory('user', function ($http, $q, $rootScope) {
         return activeUser.isCommitteeMember ? true : false;
     }
 
+    function getActiveUser() {
+        return activeUser;
+    }
+
     function logout() {
         activeUser = null;
     }
@@ -263,10 +267,26 @@ app.factory('user', function ($http, $q, $rootScope) {
         });
         return async.promise;
     } 
+    
+     function submitVote(voting,selection) {
+         var async = $q.defer();
+         var votingId = voting.id;
+         var votingsURL = $rootScope.serverPath + "/votings/"+votingId.toString();
+         var newVote = {
+             memberId: activeUser.id,
+             vote: selection
+         };
+         voting.votes.push(newVote);
+         $http.put(votingsURL,voting).then(function (response) {
+             async.resolve(votingsArr);
+         }, function (err) {
+             async.reject(err);
+         });
+         return async.promise;
+     } 
+    
 
-    function getActiveUser() {
-        return activeUser;
-    }
+
 
     function getMemberMessageArr() {
         messageArr = [];
@@ -372,6 +392,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         deleteIssue:deleteIssue,
         addVoting:addVoting,
         deleteVoting:deleteVoting,
+        submitVote:submitVote,
         isLoggedIn: isLoggedIn,
         isAdmin: isAdmin,
         logout: logout,

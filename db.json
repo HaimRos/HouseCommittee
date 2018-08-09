@@ -291,10 +291,7 @@
                 "details": "Comment",
                 "comments": []
             }],
-            "votes": [{
-                "memberId": 1,
-                "vote": ""
-            }]
+            "votes": []
         },
         {
             "id": 2,
@@ -312,10 +309,7 @@
                 "details": "Comment",
                 "comments": []
             }],
-            "votes": [{
-                "memberId": 1,
-                "vote": ""
-            }]
+            "votes": []
         },
         {
             "id": 3,
@@ -333,10 +327,7 @@
                 "details": "Comment",
                 "comments": []
             }],
-            "votes": [{
-                "memberId": 1,
-                "vote": ""
-            }]
+            "votes": []
         },
         {
             "id": 4,
@@ -354,10 +345,7 @@
                 "details": "Comment",
                 "comments": []
             }],
-            "votes": [{
-                "memberId": 1,
-                "vote": ""
-            }]
+            "votes": []
         }
     ]
 }

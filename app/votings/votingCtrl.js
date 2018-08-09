@@ -50,4 +50,10 @@ app.controller("votingCtrl", function ($scope, user) {
         })
     }
 
+    $scope.submitVote = function (voting, selection) {
+        user.submitVote(voting, selection).then(function () {}, function () {
+            console.log("error");
+        })
+    }
+
 })
