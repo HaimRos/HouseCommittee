@@ -16,10 +16,7 @@ app.controller("votingCtrl", function ($scope, user) {
             details: "Comment",
             comments: []
         }],
-        votes: [{
-            memberId: 0,
-            vote: ""
-        }]
+        votes: []
     }
 
     user.getMemberVotingArr().then(function (result) {
@@ -34,7 +31,7 @@ app.controller("votingCtrl", function ($scope, user) {
 
     $scope.addVoting = function () {
         var voteOptions = document.getElementById("inputOptions");
-        
+
         $scope.newVoting.options = voteOptions.value.split(",");
 
         user.addVoting($scope.newVoting).then(function (activeUser) {
@@ -56,4 +53,28 @@ app.controller("votingCtrl", function ($scope, user) {
         })
     }
 
+
+
+    // Chart 
+    $scope.labels = ["New Cars", "Old Cars"];
+    $scope.options = {
+        legend: {
+            display: true
+        }
+    };
+
+    $scope.data = [];
+    $scope.updateChart = function () {
+        var newCars = 4;
+        var oldCars = 3;
+        // for (var i = 0; i < $scope.cars.length; i++) {
+        //     if ($scope.cars[i].year > 2012) {
+        //         ++newCars;
+        //     } else {
+        //         ++oldCars
+        //     }
+        // }
+
+        return [newCars, oldCars];
+    }
 })

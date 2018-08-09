@@ -10,20 +10,27 @@
 
         <div id="votingCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#voitingAccordion">
             <div class="card-body">
-                <form>
-                    <div>{{voting.details}}</div>
-                    <div>{{voting.creationTime}}</div>
-                    <div>{{voting.priority}}</div>
-
-                    <div class="row form-group">
-                        <label for="voteOption" class="col-sm-2">Select your vote</label>
-                        <select id="voteOption" class=" col-sm-1" ng-model="selection">
+                <form class="row">
+                    <div class="col">
+                        <div>Title: {{voting.title}}</div>
+                        <div>Details: {{voting.details}}</div>
+                        <div>Created on: {{voting.creationTime}}</div>
+                        <div>Priority: {{voting.priority}}</div>
+                        <div>Due date: {{voting.dueDate}}</div>
+                        <div class="row form-group">
+                            <label for="voteOption" class="col-sm-3">Select your vote</label>
+                            <select id="voteOption" class=" col-sm-2" ng-model="selection">
                                 <option ng-repeat="option in newVoting.options">{{option}}</option>
-                        </select>
-                        <button type="button" class=" col-sm-1 btn btn-sm btn-primary" ng-click="submitVote(voting, selection)">Submit vote</button>
+                            </select>
+                            <button type="button" class=" col-sm-2 btn btn-sm btn-primary" ng-click="submitVote(voting, selection)">Submit vote</button>
+                        </div>
+                        <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
                     </div>
-                    <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
-                    
+                    <div >
+                        <canvas id="pie" class="chart chart-pie" chart-data="updateChart()" chart-labels="labels" chart-options="options">
+                        
+                        </canvas>
+                    </div>
                 </form>
             </div>
         </div>

@@ -10,8 +10,9 @@
 
         <div id="messageCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#messageAccordion">
             <div class="card-body">
-                <div>{{message.details}}</div>
-                <div>{{message.creationTime}}</div>
+                <div>Title: {{message.title}}</div>
+                <div>Details: {{message.details}}</div>
+                <div>Created on: {{message.creationTime}}</div>
                 <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteMessage(message)">Delete</button>
                 
             </div>
