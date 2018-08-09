@@ -10,10 +10,20 @@
 
         <div id="votingCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#voitingAccordion">
             <div class="card-body">
-                <div>{{voting.details}}</div>
-                <div>{{voting.creationTime}}</div>
-                <div>{{voting.priority}}</div>
-                <button type="button" class="btn btn-lg btn-success" ng-click="deleteVoting(voting)">Delete</button>
+                <form>
+                    <div>{{voting.details}}</div>
+                    <div>{{voting.creationTime}}</div>
+                    <div>{{voting.priority}}</div>
+
+                    <div class="form-group">
+                        <label for="voteOption">Select your vote</label>
+                        <select id="voteOption">
+                                <option ng-repeat="option in newVoting.options">{{option}}</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
+                    <button type="button" class="btn btn-lg btn-success" ng-click="myVote(voting)">Submit vote</button>
+                </form>
             </div>
         </div>
     </div>
