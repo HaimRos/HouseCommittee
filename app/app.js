@@ -3,7 +3,8 @@ var app = angular.module("HouseCommitteeApp", ["ngRoute", "imageupload","chart.j
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl: "app/home/home.html"
+        templateUrl: "app/home/home.html",
+        controller: "homeCtrl"
     })
     .when("/login", {
         templateUrl: "app/login/login.html",
