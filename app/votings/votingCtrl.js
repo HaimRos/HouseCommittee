@@ -60,7 +60,7 @@ app.controller("votingCtrl", function ($scope, user) {
 
     // Chart 
 
-    $scope.labels=[];
+    $scope.labels = [];
     $scope.options = {
         legend: {
             display: true
@@ -69,21 +69,25 @@ app.controller("votingCtrl", function ($scope, user) {
 
     $scope.data = [];
 
-     $scope.updateChart = function (voting) {
-         var optionToLook = "";
-         var votesforOption = 0;
-         var voted=0;
-         var chartData=[];
-         $scope.labels = voting.options.slice(0, voting.options.length);
-         $scope.labels.push("Didn't Vote");
-         var numOfTenants = user.getTenantsArrLength();
-         for (var i = 0; i < voting.options.length; i++) {
+    $scope.updateChart = function (voting) {
+        var optionToLook = "";
+        var votesforOption;
+        var voted = 0;
+        var chartData = [];
+        $scope.labels = voting.options.slice(0, voting.options.length);
+        $scope.labels.push("Didn't Vote");
+        var numOfTenants = user.getTenantsArrLength();
+        for (var i = 0; i < voting.options.length; i++) {
             optionToLook = voting.options[i];
-            votesforOption = voting.votes.filter(function(x){ return x === optionToLook; }).length;
-            chartData.push(votesforOption);
+            votesforOption = 0;
+            for (var j = 0; j < voting.votes.length; j++) {
+                if (voting.votes[j].vote === optionToLook)
+                    votesforOption++;
+            }
+            chartData.push(votesforOption)
             voted += votesforOption;
-         }
-         chartData.push(numOfTenants-voted)
-         return (chartData);
-     }
+        }
+        chartData.push(numOfTenants - voted)
+        return (chartData);
+    }
 })
