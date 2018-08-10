@@ -33,16 +33,20 @@
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="newVoting.details"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Voting priority</label>
-                            <select class="form-control" id="exampleFormControlSelect1" ng-model="newVoting.priority">
+                            <label for="priority">Voting priority</label>
+                            <select class="form-control" id="priority" ng-model="newVoting.priority">
                                 <option>Low</option>
                                 <option>Medium</option>
                                 <option>High</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Voting option</label>
-                            <input type="text" class="form-control" id="inputOptions" placeholder="Separate options by comma" >
+                            <label for="inputOptions">Voting option</label>
+                            <input type="text" class="form-control" id="inputOptions" placeholder="Separate options by comma" ng-model="newVoting.options">
+                        </div>
+                        <div class="form-group">
+                            <label for="dueDate">Voting due date</label>
+                            <input type="datetime-local" class="form-control" id="dueDate" ng-model="newVoting.dueDate"> 
                         </div>
                     </form>
                 </div>

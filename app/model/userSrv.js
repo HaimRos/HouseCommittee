@@ -243,7 +243,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         voting.memberId=activeUser.id;
         voting.communityId=activeUser.communityId;
         var dateTime = new Date();
-        voting.creationTime = dateTime.toString();
+        voting.creationTime = dateTime.toISOString();
         $http.post(votingsURL, voting).then(function (response) {
             newVoting = new Voting(response.data);
             votingsArr.push(newVoting);

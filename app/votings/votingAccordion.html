@@ -12,11 +12,12 @@
             <div class="card-body">
                 <form class="row">
                     <div class="col">
-                        <div>Title: {{voting.title}}</div>
-                        <div>Details: {{voting.details}}</div>
-                        <div>Created on: {{voting.creationTime}}</div>
-                        <div>Priority: {{voting.priority}}</div>
-                        <div>Due date: {{voting.dueDate}}</div>
+                        <div>Title:      {{voting.title}}</div>
+                        <div>Details:    {{voting.details}}</div>
+                        <div>Created on: {{voting.creationTime | date : 'medium'}}</div>
+                        <div>Due date:   {{voting.dueDate | date : 'medium'}}</div>
+                        <div>Priority:   {{voting.priority}}</div>
+                        
                         <div class="row form-group">
                             <label for="voteOption" class="col-sm-3">Select your vote</label>
                             <select id="voteOption" class=" col-sm-3" ng-model="selection">

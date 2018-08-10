@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div>Title: {{issue.title}}</div>
                 <div>Details: {{issue.details}}</div>
-                <div>Created on: {{issue.creationTime}}</div>
+                <div>Created on: {{issue.creationTime | date : 'medium'}}</div>
                 <img class="img-fluid" ng-src="{{issue.picture}}" alt="{{name}}">
                 <button type="button" class="btn btn-lg btn-success" ng-click="deleteIssue(issue)">Delete</button>
             </div>
