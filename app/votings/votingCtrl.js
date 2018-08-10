@@ -26,8 +26,6 @@ app.controller("votingCtrl", function ($scope, user) {
     });
 
 
-
-
     $scope.isUserAdmin = function () {
         return user.isAdmin();
     }
