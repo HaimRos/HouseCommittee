@@ -1,15 +1,15 @@
 app.controller("votingCtrl", function ($scope, user) {
 
     $scope.newVoting = {
-        memberId: 0,
-        communityId: 0,
-        creationTime: "",
-        title: "",
-        details: "",
-        options: ["Against", "In favor", "Abstained"],
+        memberId: null,
+        communityId: null,
+        creationTime: null,
+        title: null,
+        details: null,
+        options: [],
         priority: 1,
-        dueDate: "",
-        status: 1,
+        dueDate: null,
+        status: null,
         comments: [{
             memberId: 1,
             creationTime: "",
@@ -24,6 +24,9 @@ app.controller("votingCtrl", function ($scope, user) {
     }, function (error) {
         $log.error(error);
     });
+
+
+
 
     $scope.isUserAdmin = function () {
         return user.isAdmin();
@@ -56,7 +59,8 @@ app.controller("votingCtrl", function ($scope, user) {
 
 
     // Chart 
-    $scope.labels = ["New Cars", "Old Cars"];
+
+    $scope.labels=[];
     $scope.options = {
         legend: {
             display: true
@@ -64,17 +68,22 @@ app.controller("votingCtrl", function ($scope, user) {
     };
 
     $scope.data = [];
-    $scope.updateChart = function () {
-        var newCars = 4;
-        var oldCars = 3;
-        // for (var i = 0; i < $scope.cars.length; i++) {
-        //     if ($scope.cars[i].year > 2012) {
-        //         ++newCars;
-        //     } else {
-        //         ++oldCars
-        //     }
-        // }
 
-        return [newCars, oldCars];
-    }
+     $scope.updateChart = function (voting) {
+         var optionToLook = "";
+         var votesforOption = 0;
+         var voted=0;
+         var chartData=[];
+         $scope.labels = voting.options.slice(0, voting.options.length);
+         $scope.labels.push("Didn't Vote");
+         var numOfTenants = user.getTenantsArrLength();
+         for (var i = 0; i < voting.options.length; i++) {
+            optionToLook = voting.options[i];
+            votesforOption = voting.votes.filter(function(x){ return x === optionToLook; }).length;
+            chartData.push(votesforOption);
+            voted += votesforOption;
+         }
+         chartData.push(numOfTenants-voted)
+         return (chartData);
+     }
 })

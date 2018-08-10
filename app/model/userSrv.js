@@ -7,6 +7,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     var issueArr = [];
     var votingsArr = [];   
     var tenantsArr = [];
+    
 
     function Community(plainCommunity) {
         this.id = plainCommunity.id;
@@ -58,22 +59,14 @@ app.factory('user', function ($http, $q, $rootScope) {
         this.creationTime = plainVote.creationTime;
         this.title = plainVote.title;
         this.details = plainVote.details;
-        this.optoins = plainVote.optoins;
+        this.options = plainVote.options;
         this.priority = plainVote.priority;
         this.dueDate = plainVote.dueDate;
         this.comments = plainVote.comments;
         this.votes = plainVote.votes;
     }
 
-    // function Tenant(plainTenant) {
-    //     this.id = plainTenant.id;
-    //     this.communityId = plainTenant.communityId;
-    //     this.fname = plainTenant.fname;
-    //     this.lname = plainTenant.lname;
-    //     this.email = plainTenant.email;
-    //     this.apartment = plainTenant.apartment;
-    //     this.isCommitteeMember = plainTenant.isCommitteeMember;
-    // }
+
 
     function isLoggedIn() {
         return activeUser ? true : false;
@@ -85,6 +78,10 @@ app.factory('user', function ($http, $q, $rootScope) {
 
     function getActiveUser() {
         return activeUser;
+    }
+
+    function getTenantsArrLength() {
+        return tenantsArr.length;
     }
 
     function logout() {
@@ -389,6 +386,7 @@ app.factory('user', function ($http, $q, $rootScope) {
         signUp: signUp,
         addTenant:addTenant,
         deleteTenant:deleteTenant,
+        getTenantsArrLength:getTenantsArrLength,
         addMessage: addMessage,
         deleteMessage:deleteMessage,
         addIssue: addIssue,
