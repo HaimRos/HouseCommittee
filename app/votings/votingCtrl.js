@@ -59,11 +59,11 @@ app.controller("votingCtrl", function ($scope, user) {
     // Chart 
 
     $scope.labels = [];
-    $scope.options = {
-        legend: {
-            display: true
-        }
-    };
+    // $scope.options = {
+    //     legend: {
+    //         display: true
+    //     }
+    // };
 
     $scope.data = [];
 

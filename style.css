@@ -1,6 +1,10 @@
 html,
 body {
   font-family: 'Bentham', serif;
+
+}
+
+html{
   height: 100%;
 }
 
@@ -135,10 +139,10 @@ body {
    #lab_social_icon_footer {
     padding: 40px 0;
     background-color: #dedede;
-    position: absolute;
+    /* position: absolute;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0; */
   }
   
   #lab_social_icon_footer a {

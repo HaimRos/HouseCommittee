@@ -6,7 +6,7 @@ app.controller("signUpCtrl", function ($scope, user, $location) {
         fname:"",
         lname:"",
         email:"",
-        apartment:0,
+        apartment:null,
         isCommitteeMember:true,
         password:""
     }
