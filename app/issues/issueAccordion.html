@@ -1,4 +1,4 @@
-<div id="issueAccordion" class="container">
+<div id="issueAccordion">
     <div class="card" ng-repeat="issue in issueArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
@@ -10,11 +10,18 @@
 
         <div id="issueCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#issueAccordion">
             <div class="card-body">
-                <div>Title: {{issue.title}}</div>
-                <div>Details: {{issue.details}}</div>
-                <div>Created on: {{issue.creationTime | date : 'medium'}}</div>
-                <img class="img-fluid" ng-src="{{issue.picture}}" alt="{{name}}">
-                <button type="button" class="btn btn-lg btn-success" ng-click="deleteIssue(issue)">Delete</button>
+                <form class="row">
+                    <div class="col">
+                        <div>Title: {{issue.title}}</div>
+                        <div>Details: {{issue.details}}</div>
+                        <div>Created on: {{issue.creationTime | date : 'medium'}}</div>
+
+                        <button type="button" class="btn btn-lg btn-success" ng-click="deleteIssue(issue)">Delete</button>
+                    </div>
+                    <div class="col">
+                        <img class="img-fluid" ng-src="{{issue.picture}}" alt="{{name}}">
+                    </div>
+                </form>
             </div>
         </div>
     </div>

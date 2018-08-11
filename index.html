@@ -6,39 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>House Committee Web Application</title>
-
-
     <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bentham" rel="stylesheet">
-
-
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Angualr JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="app/js/imageupload.js"></script>
-    
- 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/angular.chartjs/latest/angular-chart.min.js"></script>
-
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-
-
     <script src="app/app.js"></script>
     <script src="app/home/homeCtrl.js"></script>
     <script src="app/navbar/navbarDir.js"></script>
     <script src="app/model/userSrv.js"></script>
     <script src="app/messages/messageAccordionDir.js"></script>
     <script src="app/issues/issueAccordionDir.js"></script>
+    <script src="app/footer/footerDir.js"></script>
     <script src="app/votings/votingAccordionDir.js"></script>
     <script src="app/messages/messageCtrl.js"></script>
     <script src="app/messages/messageDirCtrl.js"></script>
@@ -50,13 +40,13 @@
     <script src="app/login/loginCtrl.js"></script>
     <script src="app/signUp/signUpCtrl.js"></script>
     <script src="app/tenants/tenantsCtrl.js"></script>
-
     <script src="app/dashboard/dashboardCtrl.js"></script>
 
 </head>
 
-<body ng-app="HouseCommitteeApp">
+<body ng-app="HouseCommitteeApp" class="text-dark">
     <ng-view></ng-view>
 </body>
+<app-footer></app-footer>
 
 </html>

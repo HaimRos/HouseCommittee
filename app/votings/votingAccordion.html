@@ -1,4 +1,4 @@
-<div id="votingAccordion" class="container">
+<div id="votingAccordion">
     <div class="card" ng-repeat="voting in votingsArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
@@ -18,16 +18,16 @@
                         <div>Due date:   {{voting.dueDate | date : 'medium'}}</div>
                         <div>Priority:   {{voting.priority}}</div>
                         
-                        <div class="row form-group">
-                            <label for="voteOption" class="col-sm-3">Select your vote</label>
-                            <select id="voteOption" class=" col-sm-3" ng-model="selection">
+                        <div class="form-group">
+                            <label for="voteOption">Select your vote</label>
+                            <select id="voteOption" class="col-sm-3" ng-model="selection">
                                 <option ng-repeat="option in voting.options">{{option}}</option>
                             </select>
-                            <button type="button" class=" col-sm-3 btn btn-sm btn-primary" ng-click="submitVote(voting, selection)">Submit vote</button>
+                            <button type="button" class="btn btn-sm btn-primary" ng-click="submitVote(voting, selection)">Submit vote</button>
                         </div>
                         <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
                     </div>
-                    <div >
+                    <div class="col">
                         <canvas id="pie" class="chart chart-pie" chart-data="updateChart(voting)" chart-labels="labels" chart-options="options">
                         
                         </canvas>

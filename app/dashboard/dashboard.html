@@ -1,7 +1,7 @@
 <div>
     <app-navbar> </app-navbar>
-    <div class="gap jumbotron">
-        <div class="container">
+    <div class="gap head-jumbotron">
+        <div class="container text-center">
             <h1 class="display-3">Hi {{activeUser.fname}}, it's your dashboard</h1>
             <p class="lead">Place where each community member can see his own data</p>
         </div>
@@ -9,21 +9,28 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-bg-6">
+            <div class="dashboard-card col-md-4">
                 <h1>Messages</h1>
+                <p class="m-b-0">Total: 5</p>
+                <p class="m-b-0">Unread: 3</p>
                 <message-accordion></message-accordion>
             </div>
 
-            <div class="col-bg-6">
+            <div class="dashboard-card col-md-4">
                 <h1>Issues</h1>
+                <p class="m-b-0">Total: 5</p>
+                <p class="m-b-0">Open: 3</p>
                 <issue-accordion></issue-accordion>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
+            
+                <div class=" dashboard-card col-md-4">
                     <h1>Votings</h1>
+                    <p class="m-b-0">Total: 3</p>
+                    <p class="m-b-0">Due this week: 3</p>
                     <voting-accordion></voting-accordion>
                 </div>
-            </div>
+            
         </div>
     </div>
 </div>
+

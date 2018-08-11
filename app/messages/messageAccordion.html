@@ -1,4 +1,4 @@
-<div id="messageAccordion" class="container">
+<div id="messageAccordion" >
     <div class="card" ng-repeat="message in messageArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
@@ -14,7 +14,6 @@
                 <div>Details: {{message.details}}</div>
                 <div>Created on: {{message.creationTime | date : 'medium'}}</div>
                 <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteMessage(message)">Delete</button>
-                
             </div>
         </div>
     </div>
