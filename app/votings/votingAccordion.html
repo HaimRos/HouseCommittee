@@ -2,7 +2,7 @@
     <div class="card" ng-repeat="voting in votingsArr">
         <div class="card-header" id="heading">
             <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#votingCollapse{{$index}}" aria-expanded="true" aria-controls="collapse{{$index}}">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#votingCollapse{{$index}}" ng-click="updateChart(voting)" aria-expanded="true" aria-controls="collapse{{$index}}">
                     {{voting.title}}
                 </button>
             </h5>
@@ -25,10 +25,10 @@
                             </select>
                             <button type="button" class="btn btn-sm btn-primary" ng-click="submitVote(voting, selection)">Submit vote</button>
                         </div>
-                        <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
+                        <button type="button" class="btn btn-xs btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
                     </div>
                     <div class="col">
-                        <canvas id="pie" class="chart chart-pie" chart-data="updateChart(voting)" chart-labels="labels" chart-options="options">
+                        <canvas id="pie" class="chart chart-pie" chart-data="dataForChart" chart-labels="labels" chart-options="options">
                         
                         </canvas>
                     </div>

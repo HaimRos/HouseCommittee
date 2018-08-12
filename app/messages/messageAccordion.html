@@ -13,7 +13,7 @@
                 <div>Title: {{message.title}}</div>
                 <div>Details: {{message.details}}</div>
                 <div>Created on: {{message.creationTime | date : 'medium'}}</div>
-                <button type="button" class="btn btn-lg btn-success" ng-show="isUserAdmin()" ng-click="deleteMessage(message)">Delete</button>
+                <button type="button" class="btn btn-xs btn-success" ng-show="isUserAdmin()" ng-click="deleteMessage(message)">Delete</button>
             </div>
         </div>
     </div>

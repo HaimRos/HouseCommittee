@@ -19,6 +19,8 @@ app.controller("votingCtrl", function ($scope, user) {
         votes: []
     }
 
+   
+
     user.getMemberVotingArr().then(function (result) {
         $scope.votingsArr = result;
     }, function (error) {
@@ -59,11 +61,11 @@ app.controller("votingCtrl", function ($scope, user) {
     // Chart 
 
     $scope.labels = [];
-    // $scope.options = {
-    //     legend: {
-    //         display: true
-    //     }
-    // };
+    $scope.options = {
+        legend: {
+            display: true
+        }
+    };
 
     $scope.data = [];
 
@@ -74,6 +76,7 @@ app.controller("votingCtrl", function ($scope, user) {
         var chartData = [];
         $scope.labels = voting.options.slice(0, voting.options.length);
         $scope.labels.push("Didn't Vote");
+        $scope.dataForChart=[];
         var numOfTenants = user.getTenantsArrLength();
         for (var i = 0; i < voting.options.length; i++) {
             optionToLook = voting.options[i];
@@ -86,6 +89,7 @@ app.controller("votingCtrl", function ($scope, user) {
             voted += votesforOption;
         }
         chartData.push(numOfTenants - voted)
-        return (chartData);
+        $scope.dataForChart=chartData;
+         return (null);
     }
 })
