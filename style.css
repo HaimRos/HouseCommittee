@@ -23,6 +23,7 @@ body {
   top: 0;
   width: 100%;
   font-family: 'Bentham', serif;
+  z-index: 1;
 }
 
 .gap {
@@ -219,10 +220,13 @@ background-color: #ccc;
   color: #f39c12;
 }
 
-/* .animation-width {
-  width: 25%;
-} */
 
+
+  /* end footer */
+
+
+
+  
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
@@ -261,5 +265,5 @@ background-color: #ccc;
   .animation-width {
     width: 25%;
   }
-  /* end footer */
+
   /*# sourceMappingURL=style.css.map */
