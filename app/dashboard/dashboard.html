@@ -11,21 +11,21 @@
         <div class="row">
             <div class="dashboard-card col-md-4">
                 <h1>Messages</h1>
-                <p class="m-b-0">Total: 5</p>
-                <p class="m-b-0">Unread: 3</p>
+                <p class="m-b-0">Total: {{numOfMessages}}</p>
+                <p class="m-b-0">Unread: 1</p>
                 <message-accordion></message-accordion>
             </div>
 
             <div class="dashboard-card col-md-4">
                 <h1>Issues</h1>
-                <p class="m-b-0">Total: 5</p>
+                <p class="m-b-0">Total: {{numOfIssues}}</p>
                 <p class="m-b-0">Open: 3</p>
                 <issue-accordion></issue-accordion>
             </div>
 
             <div class=" dashboard-card col-md-4">
                 <h1>Votings</h1>
-                <p class="m-b-0">Total: 3</p>
+                <p class="m-b-0">Total: {{numOfVotings}}</p>
                 <p class="m-b-0">Due this week: 3</p>
                 <voting-accordion></voting-accordion>
             </div>
