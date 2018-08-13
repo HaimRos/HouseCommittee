@@ -1,54 +1,45 @@
-
-
-
 .overlay-link {
-    width: 300px;
-    height: 300px;
-    float: left;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    position: relative;
-    overflow: hidden;
-    
-    &:nth-of-type(2){
-      width: 200px;
-    }
-    &:nth-of-type(3){
-      width: 200px;
-      height: 200px;
-    }
+  width: 300px;
+  height: 300px;
+  float: left;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  overflow: hidden;
+  &:nth-of-type(2) {
+    width: 200px;
   }
-  .hover {
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0, 0.2);
+  &:nth-of-type(3) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.hover {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  .titulo {
+    color: white;
+    font-family: 'Bubbler One', sans-serif;
+    text-transform: uppercase;
+    font-size: 50px;
     position: absolute;
-    display: none;
-    top: 0;
-    left: 0;
-    right: 0;
-    left: 0;
-    
-    .titulo {
-      color: white;
-      font-family: 'Bubbler One', sans-serif;
-      text-transform: uppercase;
-      font-size: 50px;
-      position: absolute;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      padding: 0;
-      margin: 0;
-    }
-  
-    p {
-    
-      color: white;
-      padding: 10px;
-    }
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0;
+    margin: 0;
   }
-
- 
-
+  p {
+    color: white;
+    padding: 10px;
+  }
+}

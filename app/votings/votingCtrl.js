@@ -23,7 +23,7 @@ app.controller("votingCtrl", function ($scope, user) {
 
     user.getMemberVotingArr().then(function (result) {
             $scope.votingsArr = result;
-            for (var i = 0; i < $scope.votingsArr.length ; ++i) {
+            for (var i = 0; i < $scope.votingsArr.length; ++i) {
                 $scope.votingsArr[i].data = $scope.updateChart($scope.votingsArr[i])
             }
         },
@@ -57,7 +57,7 @@ app.controller("votingCtrl", function ($scope, user) {
     $scope.submitVote = function (voting, selection) {
         user.submitVote(voting, selection).then(function (result) {
             $scope.votingsArr = result;
-            for (var i = 0; i < $scope.votingsArr.length ; ++i) {
+            for (var i = 0; i < $scope.votingsArr.length; ++i) {
                 $scope.votingsArr[i].data = $scope.updateChart($scope.votingsArr[i])
             }
         }, function () {

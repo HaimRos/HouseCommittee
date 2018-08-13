@@ -30,17 +30,16 @@ app.controller("messageCtrl", function ($scope, user) {
     }
 
     $scope.deleteMessage = function (message) {
-        user.deleteMessage(message).then(function () {
-        }, function () {
+        user.deleteMessage(message).then(function () {}, function () {
             console.log("error");
         })
     }
 
-    user.getMemberMessageArr().then(function (result){        
-        $scope.messageArr=result;
+    user.getMemberMessageArr().then(function (result) {
+        $scope.messageArr = result;
     }, function (error) {
-            $log.error(error);
-     });
+        $log.error(error);
+    });
 
 
 

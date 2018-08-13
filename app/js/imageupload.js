@@ -1,5 +1,5 @@
 angular.module('imageupload', [])
-    .directive('image', function($q) {
+    .directive('image', function ($q) {
         'use strict'
 
         var URL = window.URL || window.webkitURL;
@@ -54,9 +54,9 @@ angular.module('imageupload', [])
             return canvas.toDataURL(type, quality);
         };
 
-        var createImage = function(url, callback) {
+        var createImage = function (url, callback) {
             var image = new Image();
-            image.onload = function() {
+            image.onload = function () {
                 callback(image);
             };
             image.src = url;
@@ -84,8 +84,8 @@ angular.module('imageupload', [])
             },
             link: function postLink(scope, element, attrs, ctrl) {
 
-                var doResizing = function(imageResult, callback) {
-                    createImage(imageResult.url, function(image) {
+                var doResizing = function (imageResult, callback) {
+                    createImage(imageResult.url, function (image) {
                         var dataURL = resizeImage(image, scope);
                         imageResult.resized = {
                             dataURL: dataURL,
@@ -95,24 +95,24 @@ angular.module('imageupload', [])
                     });
                 };
 
-                var applyScope = function(imageResult) {
-                    scope.$apply(function() {
+                var applyScope = function (imageResult) {
+                    scope.$apply(function () {
                         //console.log(imageResult);
-                        if(attrs.multiple)
+                        if (attrs.multiple)
                             scope.image.push(imageResult);
                         else
-                            scope.image = imageResult; 
+                            scope.image = imageResult;
                     });
                 };
 
 
                 element.bind('change', function (evt) {
                     //when multiple always return an array of images
-                    if(attrs.multiple)
+                    if (attrs.multiple)
                         scope.image = [];
 
                     var files = evt.target.files;
-                    for(var i = 0; i < files.length; i++) {
+                    for (var i = 0; i < files.length; i++) {
                         //create a result object for each file in files
                         var imageResult = {
                             file: files[i],
@@ -123,12 +123,11 @@ angular.module('imageupload', [])
                             imageResult.dataURL = dataURL;
                         });
 
-                        if(scope.resizeMaxHeight || scope.resizeMaxWidth) { //resize image
-                            doResizing(imageResult, function(imageResult) {
+                        if (scope.resizeMaxHeight || scope.resizeMaxWidth) { //resize image
+                            doResizing(imageResult, function (imageResult) {
                                 applyScope(imageResult);
                             });
-                        }
-                        else { //no resizing
+                        } else { //no resizing
                             applyScope(imageResult);
                         }
                     }

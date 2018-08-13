@@ -7,7 +7,7 @@ app.controller("issueCtrl", function ($scope, user) {
         title: "",
         details: "",
         priority: 1,
-        status:1,
+        status: 1,
         comments: [{
             memberId: 1,
             creationTime: "",
@@ -17,7 +17,7 @@ app.controller("issueCtrl", function ($scope, user) {
     }
 
     $scope.addIssue = function () {
-        $scope.newIssue.picture=$scope.image.dataURL;
+        $scope.newIssue.picture = $scope.image.dataURL;
         user.addIssue($scope.newIssue).then(function (activeUser) {
             $('#ModalCenter').modal('hide');
         }, function () {
@@ -25,16 +25,15 @@ app.controller("issueCtrl", function ($scope, user) {
         })
     }
 
-    user.getMemberIssueArr().then(function (result){        
-        $scope.issueArr=result;
+    user.getMemberIssueArr().then(function (result) {
+        $scope.issueArr = result;
     }, function (error) {
-            $log.error(error);
-     });
+        $log.error(error);
+    });
 
 
-     $scope.deleteIssue = function (issue) {
-        user.deleteIssue(issue).then(function () {
-        }, function () {
+    $scope.deleteIssue = function (issue) {
+        user.deleteIssue(issue).then(function () {}, function () {
             console.log("error");
         })
     }

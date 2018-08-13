@@ -5,9 +5,9 @@ app.factory('user', function ($http, $q, $rootScope) {
     var activeUser = null;
     var messageArr = [];
     var issueArr = [];
-    var votingsArr = [];   
+    var votingsArr = [];
     var tenantsArr = [];
-    
+
 
     function Community(plainCommunity) {
         this.id = plainCommunity.id;
@@ -89,8 +89,8 @@ app.factory('user', function ($http, $q, $rootScope) {
     }
 
     function findWithAttr(array, attr, value) {
-        for(var i = 0; i < array.length; i += 1) {
-            if(array[i][attr] === value) {
+        for (var i = 0; i < array.length; i += 1) {
+            if (array[i][attr] === value) {
                 return i;
             }
         }
@@ -139,7 +139,7 @@ app.factory('user', function ($http, $q, $rootScope) {
     }
 
     function addTenant(user) {
-        var newUser=null;
+        var newUser = null;
         var async = $q.defer();
         var userSignUpURL = $rootScope.serverPath + "/members";
         user.communityId = activeUser.communityId;
@@ -156,25 +156,25 @@ app.factory('user', function ($http, $q, $rootScope) {
     function deleteTenant(tenant) {
         var async = $q.defer();
         var tenantId = tenant.id;
-        var tenantsURL = $rootScope.serverPath + "/members/"+tenantId.toString();
+        var tenantsURL = $rootScope.serverPath + "/members/" + tenantId.toString();
         $http.delete(tenantsURL).then(function (response) {
-            var i=findWithAttr(tenantsArr, "id", tenantId);
+            var i = findWithAttr(tenantsArr, "id", tenantId);
             tenantsArr.splice(i, 1);
             async.resolve(tenantsArr);
         }, function (err) {
             async.reject(err);
         });
         return async.promise;
-    } 
+    }
 
 
     function addMessage(message) {
-        var newMessage=null;
+        var newMessage = null;
         var async = $q.defer();
         var messagesURL = $rootScope.serverPath + "/messages";
-        
-        message.memberId=activeUser.id;
-        message.communityId=activeUser.communityId;
+
+        message.memberId = activeUser.id;
+        message.communityId = activeUser.communityId;
 
         var dateTime = new Date();
         message.creationTime = dateTime.toString();
@@ -192,24 +192,24 @@ app.factory('user', function ($http, $q, $rootScope) {
     function deleteMessage(message) {
         var async = $q.defer();
         var msgId = message.id;
-        var messagesURL = $rootScope.serverPath + "/messages/"+msgId.toString();
+        var messagesURL = $rootScope.serverPath + "/messages/" + msgId.toString();
         $http.delete(messagesURL).then(function (response) {
-            var i=findWithAttr(messageArr, "id", msgId);
+            var i = findWithAttr(messageArr, "id", msgId);
             messageArr.splice(i, 1);
             async.resolve(messageArr);
         }, function (err) {
             async.reject(err);
         });
         return async.promise;
-    } 
+    }
 
     function addIssue(issue) {
-        var newIssue=null;
+        var newIssue = null;
         var async = $q.defer();
         var IssuesURL = $rootScope.serverPath + "/Issues";
-        issue.memberId=activeUser.id;
-        issue.communityId=activeUser.communityId;
-        var dateTime = new Date();    
+        issue.memberId = activeUser.id;
+        issue.communityId = activeUser.communityId;
+        var dateTime = new Date();
         issue.creationTime = dateTime.toString();
         $http.post(IssuesURL, issue).then(function (response) {
             newIssue = new Issue(response.data);
@@ -224,24 +224,24 @@ app.factory('user', function ($http, $q, $rootScope) {
     function deleteIssue(issue) {
         var async = $q.defer();
         var issueId = issue.id;
-        var issuesURL = $rootScope.serverPath + "/issues/"+issueId.toString();
+        var issuesURL = $rootScope.serverPath + "/issues/" + issueId.toString();
         $http.delete(issuesURL).then(function (response) {
-            var i=findWithAttr(issueArr, "id", issueId);
+            var i = findWithAttr(issueArr, "id", issueId);
             issueArr.splice(i, 1);
             async.resolve(issueArr);
         }, function (err) {
             async.reject(err);
         });
         return async.promise;
-    } 
+    }
 
 
     function addVoting(voting) {
-        var newVoting=null;
+        var newVoting = null;
         var async = $q.defer();
         var votingsURL = $rootScope.serverPath + "/votings";
-        voting.memberId=activeUser.id;
-        voting.communityId=activeUser.communityId;
+        voting.memberId = activeUser.id;
+        voting.communityId = activeUser.communityId;
         var dateTime = new Date();
         voting.creationTime = dateTime.toISOString();
         $http.post(votingsURL, voting).then(function (response) {
@@ -257,34 +257,34 @@ app.factory('user', function ($http, $q, $rootScope) {
     function deleteVoting(voting) {
         var async = $q.defer();
         var votingId = voting.id;
-        var votingsURL = $rootScope.serverPath + "/votings/"+votingId.toString();
+        var votingsURL = $rootScope.serverPath + "/votings/" + votingId.toString();
         $http.delete(votingsURL).then(function (response) {
-            var i=findWithAttr(votingsArr, "id", votingId);
+            var i = findWithAttr(votingsArr, "id", votingId);
             votingsArr.splice(i, 1);
             async.resolve(votingsArr);
         }, function (err) {
             async.reject(err);
         });
         return async.promise;
-    } 
-    
-     function submitVote(voting,selection) {
-         var async = $q.defer();
-         var votingId = voting.id;
-         var votingsURL = $rootScope.serverPath + "/votings/"+votingId.toString();
-         var newVote = {
-             memberId: activeUser.id,
-             vote: selection
-         };
-         voting.votes.push(newVote);
-         $http.put(votingsURL,voting).then(function (response) {
-             async.resolve(votingsArr);
-         }, function (err) {
-             async.reject(err);
-         });
-         return async.promise;
-     } 
-    
+    }
+
+    function submitVote(voting, selection) {
+        var async = $q.defer();
+        var votingId = voting.id;
+        var votingsURL = $rootScope.serverPath + "/votings/" + votingId.toString();
+        var newVote = {
+            memberId: activeUser.id,
+            vote: selection
+        };
+        voting.votes.push(newVote);
+        $http.put(votingsURL, voting).then(function (response) {
+            async.resolve(votingsArr);
+        }, function (err) {
+            async.reject(err);
+        });
+        return async.promise;
+    }
+
 
 
 
@@ -384,16 +384,16 @@ app.factory('user', function ($http, $q, $rootScope) {
     return {
         login: login,
         signUp: signUp,
-        addTenant:addTenant,
-        deleteTenant:deleteTenant,
-        getTenantsArrLength:getTenantsArrLength,
+        addTenant: addTenant,
+        deleteTenant: deleteTenant,
+        getTenantsArrLength: getTenantsArrLength,
         addMessage: addMessage,
-        deleteMessage:deleteMessage,
+        deleteMessage: deleteMessage,
         addIssue: addIssue,
-        deleteIssue:deleteIssue,
-        addVoting:addVoting,
-        deleteVoting:deleteVoting,
-        submitVote:submitVote,
+        deleteIssue: deleteIssue,
+        addVoting: addVoting,
+        deleteVoting: deleteVoting,
+        submitVote: submitVote,
         isLoggedIn: isLoggedIn,
         isAdmin: isAdmin,
         logout: logout,
