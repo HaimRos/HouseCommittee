@@ -62,8 +62,21 @@
                 </div>
             </div>
 
+            <div class="row mx-3">
+                <div class="form-group">
+                    <label for="image" class="col-form-label">Picture </label>
+                    <div id="inputImageFrame">
+                        <input type="file" accept="image/*" image="image" id="image" ng-model="newTenant.picture" />
+                    </div>
+                    <div>
+                        <img id="signupImg" class="img-fluid " ng-src="{{image.url}}" alt="{{name}}">
+                    </div>
 
-            <button type="button" class="btn btn-block btn-lg btn-success" ng-click="signUp()">Sign Up</button>
+                </div>
+            </div>
+
+
+            <button type="button" class="btn btn-block btn-xs btn-success" ng-click="signUp()">Sign Up</button>
         </form>
     </div>
 </div>

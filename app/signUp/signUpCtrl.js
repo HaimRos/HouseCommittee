@@ -8,7 +8,8 @@ app.controller("signUpCtrl", function ($scope, user, $location) {
         email:"",
         apartment:null,
         isCommitteeMember:true,
-        password:""
+        password:"",
+        picture:""
     }
 
     $scope.newCommunity = {
@@ -20,6 +21,7 @@ app.controller("signUpCtrl", function ($scope, user, $location) {
 
     $scope.signUp = function () {
         $scope.invalidLogin = false;
+        $scope.newTenant.picture=$scope.image.dataURL;
         user.signUp($scope.newCommunity,$scope.newUser).then(function (activeUser) {
             $location.path("/dashboard");
         }, function () {

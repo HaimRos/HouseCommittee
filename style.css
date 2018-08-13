@@ -65,6 +65,15 @@ body {
   padding: 0;
 }
 
+#signupImg{
+padding-top: 5px;  
+height:150px;
+}
+
+#inputImageFrame{
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
 .container {
   margin: 30px auto;
   width: 70%;
