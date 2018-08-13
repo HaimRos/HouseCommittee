@@ -19,13 +19,17 @@ app.controller("votingCtrl", function ($scope, user) {
         votes: []
     }
 
-   
+
 
     user.getMemberVotingArr().then(function (result) {
-        $scope.votingsArr = result;
-    }, function (error) {
-        $log.error(error);
-    });
+            $scope.votingsArr = result;
+            for (var i = 0; i < $scope.votingsArr.length ; ++i) {
+                $scope.votingsArr[i].data = $scope.updateChart($scope.votingsArr[i])
+            }
+        },
+        function (error) {
+            $log.error(error);
+        });
 
 
     $scope.isUserAdmin = function () {
@@ -51,7 +55,12 @@ app.controller("votingCtrl", function ($scope, user) {
     }
 
     $scope.submitVote = function (voting, selection) {
-        user.submitVote(voting, selection).then(function () {}, function () {
+        user.submitVote(voting, selection).then(function (result) {
+            $scope.votingsArr = result;
+            for (var i = 0; i < $scope.votingsArr.length ; ++i) {
+                $scope.votingsArr[i].data = $scope.updateChart($scope.votingsArr[i])
+            }
+        }, function () {
             console.log("error");
         })
     }
@@ -76,7 +85,7 @@ app.controller("votingCtrl", function ($scope, user) {
         var chartData = [];
         $scope.labels = voting.options.slice(0, voting.options.length);
         $scope.labels.push("Didn't Vote");
-        $scope.dataForChart=[];
+        $scope.dataForChart = [];
         var numOfTenants = user.getTenantsArrLength();
         for (var i = 0; i < voting.options.length; i++) {
             optionToLook = voting.options[i];
@@ -89,7 +98,7 @@ app.controller("votingCtrl", function ($scope, user) {
             voted += votesforOption;
         }
         chartData.push(numOfTenants - voted)
-        $scope.dataForChart=chartData;
-         return (null);
+        // $scope.dataForChart = chartData;
+        return (chartData);
     }
 })

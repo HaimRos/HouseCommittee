@@ -1,23 +1,26 @@
-<div id="votingAccordion">
+<div class="accordion" id="votingAccordion">
     <div class="card" ng-repeat="voting in votingsArr">
-        <div class="card-header" id="heading">
+        <div class="card-header" id="heading{{$index}}">
             <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#votingCollapse{{$index}}" ng-click="updateChart(voting)" aria-expanded="true" aria-controls="collapse{{$index}}">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#votingCollapse{{$index}}" aria-expanded="true"
+                    aria-controls="votingCollapse{{$index}}">
+
                     {{voting.title}}
                 </button>
             </h5>
         </div>
 
-        <div id="votingCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading" data-parent="#voitingAccordion">
+        <div id="votingCollapse{{$index}}" class="collapse" ng-class="{show : $index===0}" aria-labelledby="heading{{$index}}" data-parent="#votingAccordion">
             <div class="card-body">
+
                 <form class="row">
                     <div class="col">
-                        <div>Title:      {{voting.title}}</div>
-                        <div>Details:    {{voting.details}}</div>
+                        <div>Title: {{voting.title}}</div>
+                        <div>Details: {{voting.details}}</div>
                         <div>Created on: {{voting.creationTime | date : 'medium'}}</div>
-                        <div>Due date:   {{voting.dueDate | date : 'medium'}}</div>
-                        <div>Priority:   {{voting.priority}}</div>
-                        
+                        <div>Due date: {{voting.dueDate | date : 'medium'}}</div>
+                        <div>Priority: {{voting.priority}}</div>
+
                         <div class="form-group">
                             <label for="voteOption">Select your vote</label>
                             <select id="voteOption" class="col-sm-3" ng-model="selection">
@@ -28,8 +31,8 @@
                         <button type="button" class="btn btn-xs btn-success" ng-show="isUserAdmin()" ng-click="deleteVoting(voting)">Delete</button>
                     </div>
                     <div class="col">
-                        <canvas id="pie" class="chart chart-pie" chart-data="dataForChart" chart-labels="labels" chart-options="options">
-                        
+                        <canvas id="pie" class="chart chart-pie" chart-data="voting.data" chart-labels="labels" chart-options="options">
+
                         </canvas>
                     </div>
                 </form>
