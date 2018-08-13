@@ -71,7 +71,7 @@ body {
 }
 
 #homePic {
-  background-image: url("../../assets/paintedladies.jpg");
+  background-image: url("assets/paintedladies.jpg");
   background-repeat: no-repeat;
   height: 400px;
   margin: 0;
@@ -226,7 +226,7 @@ background-color: #ccc;
 
 
 
-  
+
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
