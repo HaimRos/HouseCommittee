@@ -1,4 +1,4 @@
-app.factory('user', function ($http, $q, $rootScope) {
+app.factory('user', function ($http, $q, $rootScope, $log) {
 
     $rootScope.serverPath = "https://json-server-heroku-wfolulzavt.now.sh";
 

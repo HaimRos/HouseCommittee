@@ -1,4 +1,4 @@
-app.controller("dashboardCtrl", function ($scope, user, $rootScope) {
+app.controller("dashboardCtrl", function ($scope, user, $rootScope, $log) {
 
     $rootScope.activeUser = user.getActiveUser();
     $rootScope.isAdmin = user.isAdmin();
