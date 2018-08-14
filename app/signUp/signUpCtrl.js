@@ -21,7 +21,8 @@ app.controller("signUpCtrl", function ($scope, user, $location) {
 
     $scope.signUp = function () {
         $scope.invalidLogin = false;
-        $scope.newTenant.picture=$scope.image.dataURL;
+        console.log($scope.newUser.picture)
+        $scope.newUser.picture=$scope.image.dataURL;
         user.signUp($scope.newCommunity,$scope.newUser).then(function (activeUser) {
             $location.path("/dashboard");
         }, function () {
